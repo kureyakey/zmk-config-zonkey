@@ -41,7 +41,7 @@
 combo_to_layer4 {
         timeout-ms = <60>;
         bindings = <&to 4>;
-        key-positions = <39 40>; // ← &lt 1 INT_MUHENKAN と &lt 2 SPACE の位置番号に置き換え
+        key-positions = <39 40>; 
     };
 
 mo2: mo2 {
