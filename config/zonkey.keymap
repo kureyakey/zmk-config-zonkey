@@ -44,18 +44,6 @@ combo_to_layer_4 {
         bindings = <&to 4>;
     };
 
-combo_to_layer_5 {
-        timeout-ms = <50>;
-        key-positions = <37 38>;
-        bindings = <&to 5>;
-    };
-
-combo_to_layer_6 {
-        timeout-ms = <50>;
-        key-positions = <37 39>;
-        bindings = <&to 6>;
-    };
-
 mo2: mo2 {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
