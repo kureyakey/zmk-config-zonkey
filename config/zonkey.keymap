@@ -38,10 +38,22 @@
 / {
     combos { compatible = "zmk,combos"; };
 
-combo_to_layer4 {
-        timeout-ms = <60>;
+combo_to_layer_4 {
+        timeout-ms = <50>;
+        key-positions = <38 39>;
         bindings = <&to 4>;
-        key-positions = <39 40>; 
+    };
+
+combo_to_layer_5 {
+        timeout-ms = <50>;
+        key-positions = <37 38>;
+        bindings = <&to 5>;
+    };
+
+combo_to_layer_6 {
+        timeout-ms = <50>;
+        key-positions = <37 39>;
+        bindings = <&to 6>;
     };
 
 mo2: mo2 {
