@@ -38,24 +38,24 @@
 / {
     combos { compatible = "zmk,combos"; };
 
-// SPACE + 無変換 → レイヤー4
+ // SPACE + 無変換 → レイヤー4
     to_layer_4 {
         timeout-ms = <50>;
-        key-positions = <38 39>;  // SPACEと無変換の位置に合わせて調整
+        key-positions = <38 39>;
         bindings = <&to 4>;
     };
 
     // 変換 + SPACE → レイヤー5
     to_layer_5 {
         timeout-ms = <50>;
-        key-positions = <37 38>;  // 変換とSPACE
+        key-positions = <37 38>;
         bindings = <&to 5>;
     };
 
     // 変換 + 無変換 → レイヤー6
     to_layer_6 {
         timeout-ms = <50>;
-        key-positions = <37 39>;  // 変換と無変換
+        key-positions = <37 39>;
         bindings = <&to 6>;
     };
 
@@ -240,7 +240,7 @@ mo2: mo2 {
 &kp GRAVE       &kp CAPS      &trans        &trans            &trans                                          &trans         &trans     &moA    &moB  &moC
 &kp TAB         &trans        &trans        &trans            &trans       &trans                &trans       &trans         &trans     &trans  &moD  &moE
 &kp LEFT_SHIFT  &trans        &trans        &trans            &trans       &trans                &kp JP_EISU  &kp JP_KANA    &trans     &moF    &moG  &moH
-&mt LCTL ESC    &kp LEFT_WIN  &kp LEFT_ALT  &kp INT_HENKAN  &kp SPACE  &kp INT_MUHENKA                 &kp BACKSPACE  &kp ENTER                      &kp DEL
+&mt LCTL ESC    &kp LEFT_WIN  &kp LEFT_ALT  &lt 3 INT_HENKAN  &lt 2 SPACE  &lt 1 INT_MUHENKAN                &kp BACKSPACE  &kp ENTER                      &kp DEL
             >;
 
             sensor-bindings = <&scroll_up_down>;
