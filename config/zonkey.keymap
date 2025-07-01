@@ -218,7 +218,7 @@ mo2: mo2 {
             bindings = <
 &kp GRAVE       &kp CAPS      &trans        &trans            &trans                                          &trans         &trans     &moA    &moB  &moC
 &kp TAB         &trans        &trans        &trans            &trans       &trans                &trans       &trans         &trans     &trans  &moD  &moE
-&kp LEFT_SHIFT  &trans        &trans        &trans            &trans       &trans                &kp JP_EISU  &kp JP_KANA    &trans     &moF    &moG  &moH
+&trans　　　　　  &trans        &trans        &trans            &trans       &trans                &kp JP_EISU  &kp JP_KANA    &trans     &moF    &moG  &moH
 &mt LCTL ESC     &trans       &trans  　　　 &trans            &trans       &trans                &trans       &trans  　　　　　　　　　　　　　　　     &trans 
             >;
 
@@ -235,8 +235,8 @@ mo2: mo2 {
             bindings = <
 &kp N1          &mo2          &kp N3        &kp N4            &kp N5                                     &mo6           &mo7       &mo8            &mo9            &mo0
 &trans          &trans        &trans        &trans            &trans       &trans                &trans  &trans         &trans     &trans          &kp UP_ARROW    &trans
-&kp LEFT_SHIFT  &trans        &trans        &trans            &trans       &trans                &trans  &trans         &trans     &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW
-&kp LCTRL        &trans       &trans  　　　 &trans            &trans       &trans                &trans       &trans  　　　　　　　　　　　　　　　     &trans
+&trans　　　　  &trans        &trans        &trans            &trans       &trans                &trans  &trans         &trans     &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW
+&trans        &trans       &trans  　　　 &trans            &trans       &trans                &trans       &trans  　　　　　　　　　　　　　　　     &trans
             >;
 
             sensor-bindings = <&scroll_up_down>;
@@ -252,7 +252,7 @@ mo2: mo2 {
             bindings = <
 &kp F1          &kp F2        &kp F3        &kp F4            &kp F5                                     &kp F6         &kp F7     &kp F8  &kp F9  &kp F10
 &kp F11         &kp F12       &trans        &trans            &trans       &trans                &trans  &trans         &trans     &trans  &trans  &trans
-&kp LEFT_SHIFT  &trans        &trans        &trans            &trans       &trans                &trans  &trans         &trans     &trans  &trans  &trans
+&trans　　　　  &trans        &trans        &trans            &trans       &trans                &trans  &trans         &trans     &trans  &trans  &trans
  &trans        &trans       &trans  　　　 &trans            &trans       &trans                &trans       &trans  　　　　　　　　　　　　　　　     &trans
             >;
 
@@ -269,7 +269,7 @@ mo2: mo2 {
             bindings = <
 &bt BT_SEL 0    &bt BT_SEL 1    &bt BT_SEL 2  &bt BT_SEL 3      &bt BT_SEL 4                                         &kp MINUS        &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9  &kp PLUS
 &bt BT_CLR      &bt BT_CLR_ALL  &trans        &trans            &trans        &trans                &trans           &kp SLASH        &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_NUMBER_6  &kp ASTERISK
-&kp LEFT_SHIFT  &trans          &trans        &trans            &trans        &trans                &kp KP_NUMBER_0  &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &kp PERIOD       &kp EQUAL
+&trans　  &trans          &trans        &trans            &trans        &trans                &kp KP_NUMBER_0  &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &kp PERIOD       &kp EQUAL
  &trans        &trans       &trans  　　　 &trans            &trans       &trans               　　　 &trans       &trans  　　　　　　　　　　　　　　　     &trans
             >;
 
@@ -286,7 +286,7 @@ mo2: mo2 {
             bindings = <
 &trans          &trans        &trans        &trans            &trans                                     &trans         &trans     &trans  &trans  &trans
 &trans          &trans        &trans        &trans            &trans       &trans                &trans  &trans         &trans     &trans  &trans  &trans
-&kp LEFT_SHIFT  &trans        &trans        &trans            &trans       &trans                &trans  &trans         &trans     &trans  &trans  &trans
+&trans　　　　　 &trans        &trans        &trans            &trans       &trans                &trans  &trans         &trans     &trans  &trans  &trans
  &trans        &trans       &trans  　　　 &trans            &trans       &trans                &trans       &trans  　　　　　　　　　　　　　　　     &trans
             >;
 
