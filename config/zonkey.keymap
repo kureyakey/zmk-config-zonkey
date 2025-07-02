@@ -267,10 +267,10 @@
             // | CTRL| WIN | ALT |HENKAN|SPACE|MUHENKAN|        | BS | ENT |                  | DEL |
 
             bindings = <
-&bt BT_SEL 0    &bt BT_SEL 1    &bt BT_SEL 2  &bt BT_SEL 3    &bt BT_SEL 4                                       &kp MINUS        &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9  &kp PLUS
-&bt BT_CLR      &bt BT_CLR_ALL  &trans        &trans          &trans        &trans              &trans           &kp SLASH        &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_NUMBER_6  &kp ASTERISK
-&kp LEFT_SHIFT  &trans          &trans        &trans          &trans        &trans              &kp KP_NUMBER_0  &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &kp PERIOD       &kp EQUAL
-&kp LCTRL       &kp LEFT_WIN    &kp LEFT_ALT  &kp INT_HENKAN  &kp SPACE     &kp INT_MUHENKAN                     &kp BACKSPACE    &kp ENTER                                                        &kp DEL
+&bt BT_SEL 0    &bt BT_SEL 1    &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4                             &kp MINUS        &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9  &kp PLUS
+&bt BT_CLR      &bt BT_CLR_ALL  &trans        &trans        &trans        &trans    &trans           &kp SLASH        &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_NUMBER_6  &kp ASTERISK
+&kp LEFT_SHIFT  &trans          &trans        &trans        &trans        &trans    &kp KP_NUMBER_0  &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &kp PERIOD       &kp EQUAL
+&kp LCTRL       &kp LEFT_WIN    &kp LEFT_ALT  &trans        &trans        &trans                     &kp BACKSPACE    &kp ENTER                                                        &kp DEL
             >;
 
             sensor-bindings = <&scroll_up_down>;
