@@ -216,10 +216,10 @@
             // | CTRL| WIN | ALT |HENKAN|SPACE|MUHENKAN|         | BS | ENT |                   | DEL |
 
             bindings = <
-&kp GRAVE       &kp CAPS      &trans        &trans            &trans                                          &trans         &trans     &moA    &moB  &moC
-&kp TAB         &trans        &trans        &trans            &trans       &trans                &trans       &trans         &trans     &trans  &moD  &moE
-&kp LEFT_SHIFT  &trans        &trans        &trans            &trans       &trans                &kp JP_EISU  &kp JP_KANA    &trans     &moF    &moG  &moH
-&mt LCTL ESC    &kp LEFT_WIN  &kp LEFT_ALT  &lt 3 INT_HENKAN  &lt 2 SPACE  &lt 1 INT_MUHENKAN                 &kp BACKSPACE  &kp ENTER                      &kp DEL
+&kp GRAVE       &kp CAPS      &trans        &trans  &trans                         &trans         &trans     &moA    &moB  &moC
+&kp TAB         &trans        &trans        &trans  &trans  &trans    &trans       &trans         &trans     &trans  &moD  &moE
+&kp LEFT_SHIFT  &trans        &trans        &trans  &trans  &trans    &kp JP_EISU  &kp JP_KANA    &trans     &moF    &moG  &moH
+&mt LCTL ESC    &kp LEFT_WIN  &kp LEFT_ALT  &mo 6   &mo 4   &mo 1                  &kp BACKSPACE  &kp ENTER                      &kp DEL
             >;
 
             sensor-bindings = <&scroll_up_down>;
