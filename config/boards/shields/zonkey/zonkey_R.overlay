@@ -58,7 +58,5 @@
     automouse-layer = <6>;
     scroll-layers = <5>;
 
-    pointer-move-scale = <2>;
-
     };
 };
