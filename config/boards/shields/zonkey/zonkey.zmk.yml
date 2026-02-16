@@ -2,7 +2,7 @@ file_format: "1"
 id: zonkey
 name: zonkey
 type: shield
-url: https://github.com/kureyakey/zmk-config-zonkey2
+url: https://github.com/kureyakey/zmk-config-zonkey
 requires: [seeeduino_xiao_ble]
 features:
   - keys
