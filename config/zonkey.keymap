@@ -2,8 +2,12 @@
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/pointing.h>
+#include <dt-bindings/zmk/outputs.h>
 
-/* Clean up the redefinition of scroll value */
+/* Move it here, outside of any braces */
+#include <behaviors/none.dtsi>
+
+/* Redefinition guard for pointing */
 #ifdef ZMK_POINTING_DEFAULT_SCRL_VAL
 #undef ZMK_POINTING_DEFAULT_SCRL_VAL
 #endif
