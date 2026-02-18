@@ -1,4 +1,13 @@
 #include "zonkey.dtsi"
+/* ADD THIS BLOCK HERE */
+/ {
+    behaviors {
+        none: none {
+            compatible = "zmk,behavior-none";
+            #binding-cells = <0>;
+        };
+    };
+};
 #include <input/processors.dtsi>
 #include <input/processors/runtime-input-processor.dtsi>
 #include <behaviors/battery_history_request.dtsi>
