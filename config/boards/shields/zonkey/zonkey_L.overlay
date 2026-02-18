@@ -1,16 +1,9 @@
 #include "zonkey.dtsi"
+#include <behaviors/battery_history_request.dtsi>
 
 / {
-    behaviors {
-        none: none {
-            compatible = "zmk,behavior-none";
-            #binding-cells = <0>;
-        };
-    };
+    /* Custom behaviors can go here, but avoid redefining 'none' */
 };
-
-/* Ensure there is a newline before includes */
-#include <behaviors/battery_history_request.dtsi>
 
 &kscan0 {
     col-gpios
