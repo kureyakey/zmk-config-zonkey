@@ -1,5 +1,7 @@
 #include "zonkey.dtsi"
 
+/* Define the label locally so the processors don't complain */
+/* This is outside any other blocks */
 / {
     behaviors {
         none: none {
