@@ -1,13 +1,12 @@
 manifest:
   remotes:
-    - name: zmkfirmware
-      url-base: https://github.com/zmkfirmware
+    - name: cormoran
+      url-base: https://github.com/cormoran
     - name: kureyakey
       url-base: https://github.com/kureyakey
     - name: caksoylar 
       url-base: https://github.com/caksoylar  
-    - name: cormoran
-      url-base: https://github.com/cormoran
+    
       
       projects:
     - name: zmk
