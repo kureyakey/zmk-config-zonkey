@@ -4,11 +4,10 @@ manifest:
       url-base: https://github.com/cormoran
     - name: kureyakey
       url-base: https://github.com/kureyakey
-    - name: caksoylar 
-      url-base: https://github.com/caksoylar  
-    
-      
-      projects:
+    - name: caksoylar
+      url-base: https://github.com/caksoylar
+
+  projects:
     - name: zmk
       remote: cormoran
       revision: v0.3-branch+dya
@@ -31,5 +30,6 @@ manifest:
     - name: zmk-module-runtime-input-processor
       remote: cormoran
       revision: main
+
   self:
     path: config
