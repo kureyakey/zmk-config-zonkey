@@ -36,11 +36,7 @@
 };
 
 / {
-/* Add this block */
-    behaviors {
-        #include <behaviors/none.dtsi>
-    };
-　　combos { compatible = "zmk,combos"; };
+    combos { compatible = "zmk,combos"; };
 
     mo2: mo2 {
         compatible = "zmk,behavior-mod-morph";
