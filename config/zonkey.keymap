@@ -3,8 +3,9 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/pointing.h>
 #include <input/processors.dtsi>
-#include <input/processors/runtime-input-processor.dtsi>
-#include <behaviors/runtime-sensor-rotate.dtsi>
+
+//#include <input/processors/runtime-input-processor.dtsi>
+//#include <behaviors/runtime-sensor-rotate.dtsi>
 #include <behaviors/battery_history_request.dtsi>
 
 /* Redefinition guard for pointing */
@@ -196,20 +197,18 @@
         };
 
      rsr_vol: rsr_vol {
-        compatible = "zmk,behavior-runtime-sensor-rotate";
-        #sensor-binding-cells = <0>;
-        tap-ms = <20>;
-        cw-binding = <&kp C_VOL_DN>;
-        ccw-binding = <&kp C_VOL_UP>;
-    };
+        compatible = "zmk,behavior-sensor-rotate"; // runtime- を削除
+        #sensor-binding-cells = <0>;
+        tap-ms = <20>;
+        bindings = <&kp C_VOL_DN>, <&kp C_VOL_UP>; // bindings 形式に変更
+    };
 
-    rsr_pg: rsr_pg {
-        compatible = "zmk,behavior-runtime-sensor-rotate";
-        #sensor-binding-cells = <0>;
-        tap-ms = <20>;
-        cw-binding = <&kp PG_UP>;
-        ccw-binding = <&kp PAGE_DOWN>;
-    };
+    rsr_pg: rsr_pg {
+        compatible = "zmk,behavior-sensor-rotate"; // runtime- を削除
+        #sensor-binding-cells = <0>;
+        tap-ms = <20>;
+        bindings = <&kp PG_UP>, <&kp PAGE_DOWN>; // bindings 形式に変更
+    };
 };
 
     keymap {
