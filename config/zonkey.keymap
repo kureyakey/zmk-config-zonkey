@@ -173,7 +173,16 @@
             bindings = <&msc SCRL_DOWN>, <&msc SCRL_UP>;
             tap-ms = <20>;
         };
-    };
+
+        rsr_vol: rsr_vol {
+            compatible = "zmk,behavior-runtime-sensor-rotate";
+            #sensor-binding-cells = <0>;
+            tap-ms = <5>;
+            cw-binding = <&kp C_VOL_UP>;
+            ccw-binding = <&kp C_VOL_DN>;
+        };
+    };    
+};
 
     keymap {
         compatible = "zmk,keymap";
@@ -185,8 +194,8 @@
 &kp LEFT_SHIFT  &kp Z           &kp X           &lt 6 C         &lt 5 V         &lt 4 B                  &kp MINUS       &kp N           &kp M           &kp COMMA       &kp DOT      &kp SLASH
 &kp LCTRL       &kp LEFT_WIN    &kp LEFT_ALT    &lt 3 INT_HENKAN &lt 2 SPACE    &lt 1 INT_MUHENKAN       &kp BACKSPACE   &kp ENTER       &none           &kp DEL
             >;
-            sensor-bindings = <&scroll_up_down &inc_dec_kp C_VOL_DN C_VOL_UP>;
-        };
+            sensor-bindings = <&rsr_trans &rsr_trans>;
+        }
 
         layer_1 {
             bindings = <
@@ -205,8 +214,8 @@
 &kp LEFT_SHIFT  &trans          &trans          &trans          &trans          &trans                   &trans  &trans          &trans          &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW
 &kp LCTRL       &kp LEFT_WIN    &kp LEFT_ALT    &lt 3 INT_HENKAN &lt 2 SPACE    &lt 1 INT_MUHENKAN       &kp BACKSPACE   &kp ENTER       &none           &kp DEL
             >;
-            sensor-bindings = <&scroll_up_down>;
-        };
+            sensor-bindings = <&rsr_vol &rsr_trans>;
+        }
 
         layer_3 {
             bindings = <
