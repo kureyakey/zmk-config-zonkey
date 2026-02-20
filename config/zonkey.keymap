@@ -193,7 +193,7 @@
 &kp LEFT_SHIFT  &kp Z           &kp X           &lt 6 C         &lt 5 V         &lt 4 B                  &kp MINUS       &kp N           &kp M           &kp COMMA       &kp DOT      &kp SLASH
 &kp LCTRL       &kp LEFT_WIN    &kp LEFT_ALT    &lt 3 INT_HENKAN &lt 2 SPACE    &lt 1 INT_MUHENKAN       &kp BACKSPACE   &kp ENTER       &none           &kp DEL
             >;
-            sensor-bindings = <&rsr_trans &rsr_trans>;
+            sensor-bindings = <&none &none>;
         };
 
         layer_1 {
@@ -213,7 +213,7 @@
 &kp LEFT_SHIFT  &trans          &trans          &trans          &trans          &trans                   &trans  &trans          &trans          &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW
 &kp LCTRL       &kp LEFT_WIN    &kp LEFT_ALT    &lt 3 INT_HENKAN &lt 2 SPACE    &lt 1 INT_MUHENKAN       &kp BACKSPACE   &kp ENTER       &none           &kp DEL
             >;
-            sensor-bindings = <&rsr_vol &rsr_trans>;
+            sensor-bindings = <&rsr_vol &none>;
         };
 
         layer_3 {
