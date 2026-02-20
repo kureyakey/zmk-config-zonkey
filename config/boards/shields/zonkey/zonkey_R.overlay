@@ -1,33 +1,41 @@
+/* 1. インクルードはファイルの先頭にまとめる */
+#include "zonkey.dtsi"
+// 存在しないファイルはコメントアウト（ビルドエラーの主犯）
+// #include <input/processors.dtsi>
+// #include <input/processors/runtime-input-processor.dtsi>
+// #include <behaviors/battery_history_request.dtsi>
+
 / {
-    behaviors {
-        none: none {
-            compatible = "zmk,behavior-none";
-            #binding-cells = <0>;
+    /* 2. ZMK標準のnoneと競合しないよう、必要なければ削除。
+       もし残すなら node 名を変更（例：none_behavior） */
+
+    /* 3. トラックボール設定はここに入れる */
+    trackball_listener: trackball_listener {
+        compatible = "zmk,input-listener";
+        status = "okay";
+        device = <&trackball>; // trackball_deviceから修正
+        
+        /* input-processors を使うには west.yml に
+           zmk-module-runtime-input-processor が必要です。
+           一旦、エラー回避のためにこれらをコメントアウトして通すのが定石です。 */
+        // input-processors = <&mouse_runtime_input_processor>;
+
+        scroller {
+            layers = <5>;
+            /* スクロール設定も同様に一旦コメントアウトして、
+               まずはトラックボールが動くことを優先します */
+            /*
+            input-processors =
+                <&zip_xy_transform INPUT_TRANSFORM_X_INVERT
+                 &zip_xy_to_scroll_mapper
+                 &zip_scroll_transform INPUT_TRANSFORM_X_INVERT
+                 &zip_scroll_scaler 1 5>;
+            */
         };
     };
-
-&trackball_listener {
-    status = "okay";
-    device = <&trackball_device>;
-    input-processors = <&mouse_runtime_input_processor>;
-
-    scroller {
-        layers = <5>;
-        input-processors =
-            <&zip_xy_transform INPUT_TRANSFORM_X_INVERT
-             &zip_xy_to_scroll_mapper
-             &zip_scroll_transform INPUT_TRANSFORM_X_INVERT
-             &zip_scroll_scaler 1 5
-             &scroll_runtime_input_processor>;
-    };
-};
 };
 
-#include "zonkey.dtsi"
-#include <input/processors.dtsi>
-#include <input/processors/runtime-input-processor.dtsi>
-#include <behaviors/battery_history_request.dtsi>
-
+/* 4. ピン設定などはそのまま維持 */
 &default_transform {
     col-offset = <6>;
 };
@@ -76,4 +84,9 @@
         spi-max-frequency = <2000000>;
         irq-gpios = <&gpio0 2 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
     };
+};
+
+/* 5. 右手のエンコーダを確実に有効化 */
+&left_encoder {
+    status = "okay";
 };
