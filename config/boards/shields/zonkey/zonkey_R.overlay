@@ -1,28 +1,14 @@
-/ {
-    behaviors {
-        none: none {
-            compatible = "zmk,behavior-none";
-            #binding-cells = <0>;
-        };
-    };
+#include "zonkey.dtsi"
 
+/ {
     trackball_listener: trackball_listener {
         compatible = "zmk,input-listener";
+        status = "okay";
         device = <&trackball>;
-        input-processors = <&mouse_runtime_input_processor>;
-
-        scroller {
-            layers = <5>;
-            input-processors = <&zip_xy_to_scroll_mapper &scroll_runtime_input_processor>;
-        };
     };
 };
 
-#include "zonkey.dtsi"
-#include <input/processors.dtsi>
-#include <input/processors/runtime-input-processor.dtsi>
-#include <behaviors/battery_history_request.dtsi>
-
+/* マトリックス列のオフセット設定 */
 &default_transform {
     col-offset = <6>;
 };
@@ -37,25 +23,28 @@
         ;
 };
 
+/* nRF52系の pinctrl 正しい定義の書き方 */
 &pinctrl {
+    /* spi0用のピン定義を「ラベル」として明示 */
     spi0_default: spi0_default {
         group1 {
             psels = <NRF_PSEL(SPIM_SCK, 0, 5)>,
-                <NRF_PSEL(SPIM_MOSI, 0, 4)>,
-                <NRF_PSEL(SPIM_MISO, 0, 4)>;
+                    <NRF_PSEL(SPIM_MOSI, 0, 4)>,
+                    <NRF_PSEL(SPIM_MISO, 0, 4)>;
         };
     };
 
     spi0_sleep: spi0_sleep {
         group1 {
             psels = <NRF_PSEL(SPIM_SCK, 0, 5)>,
-                <NRF_PSEL(SPIM_MOSI, 0, 4)>,
-                <NRF_PSEL(SPIM_MISO, 0, 4)>;
+                    <NRF_PSEL(SPIM_MOSI, 0, 4)>,
+                    <NRF_PSEL(SPIM_MISO, 0, 4)>;
             low-power-enable;
         };
     };
 };
 
+/* SPI本体の設定。ここで先ほどのラベルを参照 */
 &spi0 {
     status = "okay";
     compatible = "nordic,nrf-spim";
