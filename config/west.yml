@@ -12,11 +12,6 @@ manifest:
   projects:
     - name: zmk
       remote: cormoran
-      revision: v0.3-branch+dya
-      import: app/west.yml
-
-    - name: zmk
-      remote: cormoran
       revision: v0.3+custom-studio-protocol
       import:
         file: app/west.yml
