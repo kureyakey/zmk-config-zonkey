@@ -21,13 +21,7 @@ manifest:
     - name: zmk-rgbled-widget
       remote: caksoylar
       revision: v0.3
-    - name: zmk-module-ble-management
-      remote: cormoran
-      revision: main
     - name: zmk-module-battery-history
-      remote: cormoran
-      revision: main
-    - name: zmk-module-settings-rpc
       remote: cormoran
       revision: main
     - name: zmk-module-runtime-input-processor
