@@ -32,6 +32,13 @@ manifest:
     - name: zmk-module-runtime-input-processor
       remote: cormoran
       revision: main
-
+    - name: zmk-behavior-runtime-sensor-rotate
+      remote: cormoran
+      revision: main # or latest commit hash
+    - name: zmk
+      remote: cormoran
+      revision: v0.3+custom-studio-protocol
+      import:
+        file: app/west.yml
   self:
     path: config
