@@ -12,8 +12,9 @@ manifest:
   projects:
     - name: zmk
       remote: cormoran
-      revision: v0.3-branch+dya
-      import: app/west.yml
+      revision: v0.3+custom-studio-protocol
+      import:
+        file: app/west.yml
     - name: zmk-pmw3610-driver
       remote: kureyakey
       revision: main
@@ -32,6 +33,8 @@ manifest:
     - name: zmk-module-runtime-input-processor
       remote: cormoran
       revision: main
-
+    - name: zmk-behavior-runtime-sensor-rotate
+      remote: cormoran
+      revision: main # or latest commit hash
   self:
     path: config
