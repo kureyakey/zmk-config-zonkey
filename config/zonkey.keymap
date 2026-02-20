@@ -16,7 +16,7 @@
 
 #define ZMK_POINTING_DEFAULT_SCRL_VAL 100
 #define MOUSE 6
-#define JP_DQUOTE       AT               // "
+#define JP_DQUOTE       AT                // "
 #define JP_AMPERSAND    CARET             // &
 #define JP_QUOTE        AMPERSAND         // '
 #define JP_EQUAL        UNDER             // =
@@ -63,7 +63,6 @@
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&kp N2>, <&kp AT>;
-
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
@@ -71,7 +70,6 @@
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&kp N6>, <&kp CARET>;
-
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
@@ -79,7 +77,6 @@
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&kp N7>, <&kp AMPS>;
-
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
@@ -87,7 +84,6 @@
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&kp N8>, <&kp ASTRK>;
-
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
@@ -95,7 +91,6 @@
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&kp N9>, <&kp LPAR>;
-
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
@@ -103,7 +98,6 @@
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&kp N0>, <&kp LS(N9)>;
-
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
@@ -111,7 +105,6 @@
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&kp MINUS>, <&kp UNDERSCORE>;
-
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
@@ -119,7 +112,6 @@
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&kp EQUAL>, <&kp PLUS>;
-
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
@@ -127,7 +119,6 @@
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&kp INT3>, <&kp JP_PIPE>;
-
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
@@ -135,7 +126,6 @@
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&kp LBKT>, <&kp LBRC>;
-
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
@@ -143,7 +133,6 @@
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&kp RBKT>, <&kp RBRC>;
-
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
@@ -151,7 +140,6 @@
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&kp SEMI>, <&kp KP_PLUS>;
-
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
@@ -159,7 +147,6 @@
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&kp APOSTROPHE>, <&kp DQT>;
-
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
@@ -167,7 +154,6 @@
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&kp BACKSLASH>, <&kp TILDE2>;
-
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
@@ -175,7 +161,6 @@
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&kp JP_BSLH>, <&kp JP_UNDERSCORE>;
-
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
@@ -183,7 +168,6 @@
             compatible = "zmk,behavior-hold-tap";
             label = "LAYER_TAP_TO_0";
             bindings = <&mo>, <&to_layer_0>;
-
             #binding-cells = <2>;
             tapping-term-ms = <200>;
         };
@@ -192,24 +176,23 @@
             compatible = "zmk,behavior-sensor-rotate";
             #sensor-binding-cells = <0>;
             bindings = <&msc SCRL_DOWN>, <&msc SCRL_UP>;
-
             tap-ms = <20>;
         };
 
-     rsr_vol: rsr_vol {
-        compatible = "zmk,behavior-sensor-rotate"; // runtime- を削除
-        #sensor-binding-cells = <0>;
-        tap-ms = <20>;
-        bindings = <&kp C_VOL_DN>, <&kp C_VOL_UP>; // bindings 形式に変更
-    };
+        rsr_vol: rsr_vol {
+            compatible = "zmk,behavior-sensor-rotate";
+            #sensor-binding-cells = <0>;
+            tap-ms = <20>;
+            bindings = <&kp C_VOL_DN>, <&kp C_VOL_UP>;
+        };
 
-    rsr_pg: rsr_pg {
-        compatible = "zmk,behavior-sensor-rotate"; // runtime- を削除
-        #sensor-binding-cells = <0>;
-        tap-ms = <20>;
-        bindings = <&kp PG_UP>, <&kp PAGE_DOWN>; // bindings 形式に変更
-    };
-};
+        rsr_pg: rsr_pg {
+            compatible = "zmk,behavior-sensor-rotate";
+            #sensor-binding-cells = <0>;
+            tap-ms = <20>;
+            bindings = <&kp PG_UP>, <&kp PAGE_DOWN>;
+        };
+    };
 
     keymap {
         compatible = "zmk,keymap";
@@ -218,10 +201,9 @@
             bindings = <
 &kp Q           &kp W         &kp E         &kp R             &kp T                                         &kp Y          &kp U      &kp I      &kp O    &kp P
 &kp A           &kp S         &kp D         &kp F             &kp G        &kp LS(LG(S))         &kp B      &kp H          &kp J      &kp K      &kp L    &kp SQT
-&kp LEFT_SHIFT  &kp Z         &kp X         &lt 6 C           &lt 5 V      &lt 4 B               &kp MINUS  &kp N          &kp M      &kp COMMA  &kp DOT  &kp SLASH
-&kp LCTRL       &kp LEFT_WIN  &kp LEFT_ALT  &lt 3 INT_HENKAN  &lt 2 SPACE  &lt 1 INT_MUHENKAN               &kp BACKSPACE  &kp ENTER                                 &kp DELETE
+&kp LEFT_SHIFT  &kp Z         &kp X         &lt 6 C           &lt 5 V      &lt 4 B                &kp MINUS  &kp N          &kp M      &kp COMMA  &kp DOT  &kp SLASH
+&kp LCTRL       &kp LEFT_WIN  &kp LEFT_ALT  &lt 3 INT_HENKAN  &lt 2 SPACE  &lt 1 INT_MUHENKAN               &kp BACKSPACE  &kp ENTER                         &kp DELETE
             >;
-
             sensor-bindings = <&rsr_vol &rsr_pg>;
         };
 
@@ -230,9 +212,8 @@
 &kp CAPSLOCK    &kp GRAVE     &trans        &trans            &trans                                          &trans         &trans     &moA  &moB  &moC
 &kp TAB         &trans        &trans        &trans            &trans       &trans                &kp JP_EISU  &trans         &trans     &moD  &moE  &kp ENTER
 &kp LEFT_SHIFT  &trans        &trans        &trans            &trans       &trans                &trans       &kp JP_KANA    &moF       &moG  &moH  &kp ENTER
-&mt LCTL ESC    &kp LEFT_WIN  &kp LEFT_ALT  &lt 3 INT_HENKAN  &lt 2 SPACE  &lt 1 INT_MUHENKAN                 &kp BACKSPACE  &kp ENTER                         &none
+&mt LCTL ESC    &kp LEFT_WIN  &kp LEFT_ALT  &lt 3 INT_HENKAN  &lt 2 SPACE  &lt 1 INT_MUHENKAN                   &kp BACKSPACE  &kp ENTER                   &none
             >;
-
             sensor-bindings = <&rsr_vol &rsr_pg>;
         };
 
@@ -241,9 +222,8 @@
 &kp N1          &mo2          &kp N3        &kp N4            &kp N5                                     &mo6           &mo7       &mo8            &mo9            &mo0
 &trans          &trans        &trans        &trans            &trans       &trans                &trans  &trans         &trans     &trans          &kp UP_ARROW    &trans
 &kp LEFT_SHIFT  &trans        &trans        &trans            &trans       &trans                &trans  &trans         &trans     &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW
-&kp LCTRL       &kp LEFT_WIN  &kp LEFT_ALT  &lt 3 INT_HENKAN  &lt 2 SPACE  &lt 1 INT_MUHENKAN            &kp BACKSPACE  &kp ENTER                                                   &none
+&kp LCTRL       &kp LEFT_WIN  &kp LEFT_ALT  &lt 3 INT_HENKAN  &lt 2 SPACE  &lt 1 INT_MUHENKAN            &kp BACKSPACE  &kp ENTER                                   &none
             >;
-
             sensor-bindings = <&rsr_vol &rsr_pg>;
         };
 
@@ -254,31 +234,26 @@
 &kp LEFT_SHIFT  &trans        &trans        &trans            &trans       &trans                &trans  &trans         &trans     &trans  &trans  &trans
 &kp LCTRL       &kp LEFT_WIN  &kp LEFT_ALT  &lt 3 INT_HENKAN  &lt 2 SPACE  &lt 1 INT_MUHENKAN            &kp BACKSPACE  &kp ENTER                           &none
             >;
-
             sensor-bindings = <&rsr_vol &rsr_pg>;
         };
-
 
         layer_4 {
             bindings = <
 &bt BT_SEL 0    &bt BT_SEL 1    &bt BT_SEL 2  &bt BT_SEL 3    &bt BT_SEL 4                               &kp MINUS        &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9  &kp PLUS
 &bt BT_CLR      &bt BT_CLR_ALL  &trans        &trans          &trans        &trans              &trans   &kp SLASH        &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_NUMBER_6  &kp ASTERISK
 &kp LEFT_SHIFT  &trans          &trans        &trans          &trans        &trans              &kp DOT  &kp KP_NUMBER_0  &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &kp EQUAL
-&kp LCTRL       &kp LEFT_WIN    &kp LEFT_ALT  &kp INT_HENKAN  &kp SPACE     &kp INT_MUHENKAN             &kp BACKSPACE    &kp ENTER                                                        &none
+&kp LCTRL       &kp LEFT_WIN    &kp LEFT_ALT  &kp INT_HENKAN  &kp SPACE     &kp INT_MUHENKAN             &kp BACKSPACE    &kp ENTER                                         &none
             >;
-
             sensor-bindings = <&rsr_vol &rsr_pg>;
         };
 
-
         layer_5 {
             bindings = <
-&studio_unlock  &trans        &trans        &trans          &trans                                 &trans         &trans     &trans  &trans  &trans
-&trans          &trans        &trans        &trans          &trans     &trans              &trans  &trans         &trans     &trans  &trans  &trans
-&kp LEFT_SHIFT  &trans        &trans        &trans          &trans     &trans              &trans  &trans         &trans     &trans  &trans  &trans
+&studio_unlock  &trans        &trans        &trans          &trans                                     &trans         &trans     &trans  &trans  &trans
+&trans          &trans        &trans        &trans          &trans       &trans              &trans  &trans         &trans     &trans  &trans  &trans
+&kp LEFT_SHIFT  &trans        &trans        &trans          &trans       &trans              &trans  &trans         &trans     &trans  &trans  &trans
 &kp LCTRL       &kp LEFT_WIN  &kp LEFT_ALT  &kp INT_HENKAN  &kp SPACE  &kp INT_MUHENKAN            &kp BACKSPACE  &kp ENTER                          &none
             >;
-
             sensor-bindings = <&rsr_vol &rsr_pg>;
         };
 
@@ -289,9 +264,7 @@
 &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans    &trans    &trans    &trans
 &trans  &trans  &trans  &trans  &trans  &trans            &trans  &trans                                &none
             >;
-
             sensor-bindings = <&rsr_vol &rsr_pg>;
         };
-
     };
 };
