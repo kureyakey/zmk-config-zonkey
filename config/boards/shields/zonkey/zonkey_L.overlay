@@ -18,4 +18,5 @@
 
 &left_encoder {
     status = "okay";
+    sensors = <&left_encoder>;
 };
