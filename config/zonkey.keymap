@@ -221,7 +221,7 @@
 &mt LCTL ESC    &kp LEFT_WIN  &kp LEFT_ALT  &lt 3 INT_HENKAN  &lt 2 SPACE  &lt 1 INT_MUHENKAN                 &kp BACKSPACE  &kp ENTER                         &none
             >;
 
-            sensor-bindings = <&scroll_up_down>;
+            sensor-bindings = <&inc_dec_kp K_VOLUME_UP C_VOLUME_DOWN>;
         };
 
         layer_2 {
