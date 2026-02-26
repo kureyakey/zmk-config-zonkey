@@ -171,12 +171,21 @@
             tapping-term-ms = <200>;
         };
 
-        scroll_up_down: behavior_sensor_rotate_mouse_wheel_up_down {
-            compatible = "zmk,behavior-sensor-rotate";
-            #sensor-binding-cells = <0>;
-            bindings = <&msc SCRL_DOWN>, <&msc SCRL_UP>;
-            tap-ms = <20>;
-        };
+        rsr_vol: rsr_vol {
+        compatible = "zmk,behavior-runtime-sensor-rotate";
+        #sensor-binding-cells = <0>;
+        tap-ms = <20>;
+        cw-binding = <&kp C_VOL_DN>;
+        ccw-binding = <&kp C_VOL_UP>;
+    };
+
+    rsr_pg: rsr_pg {
+        compatible = "zmk,behavior-runtime-sensor-rotate";
+        #sensor-binding-cells = <0>;
+        tap-ms = <20>;
+        cw-binding = <&kp PG_UP>;
+        ccw-binding = <&kp PAGE_DOWN>;
+    };
     };
 
     keymap {
@@ -189,7 +198,8 @@
 &kp LEFT_SHIFT  &kp Z           &kp X           &lt 6 C         &lt 5 V         &lt 4 B                  &kp MINUS       &kp N           &kp M           &kp COMMA       &kp DOT      &kp SLASH
 &kp LCTRL       &kp LEFT_WIN    &kp LEFT_ALT    &lt 3 INT_HENKAN &lt 2 SPACE    &lt 1 INT_MUHENKAN       &kp BACKSPACE   &kp ENTER       &none           &kp DEL
             >;
-            sensor-bindings = <&scroll_up_down &inc_dec_kp C_VOL_DN C_VOL_UP>;
+            sensor-bindings = <&rsr_vol>;
+            sensor-bindings = <&rsr_pg>;
         };
 
         layer_1 {
@@ -199,7 +209,8 @@
 &kp LEFT_SHIFT  &trans          &trans          &trans          &trans          &trans                   &trans          &kp JP_KANA     &moF            &moG  &moH  &kp ENTER
 &mt LCTL ESC    &kp LEFT_WIN    &kp LEFT_ALT    &lt 3 INT_HENKAN &lt 2 SPACE    &lt 1 INT_MUHENKAN       &kp BACKSPACE   &kp ENTER       &none           &kp DEL
             >;
-            sensor-bindings = <&scroll_up_down>;
+            sensor-bindings = <&rsr_vol>;
+            sensor-bindings = <&rsr_pg>;
         };
 
         layer_2 {
@@ -219,7 +230,8 @@
 &kp LEFT_SHIFT  &trans          &trans          &trans          &trans          &trans                   &trans  &trans          &trans          &trans  &trans  &trans
 &kp LCTRL       &kp LEFT_WIN    &kp LEFT_ALT    &lt 3 INT_HENKAN &lt 2 SPACE    &lt 1 INT_MUHENKAN       &kp BACKSPACE   &kp ENTER       &none           &kp DEL
             >;
-            sensor-bindings = <&scroll_up_down>;
+            sensor-bindings = <&rsr_vol>;
+            sensor-bindings = <&rsr_pg>;
         };
 
         layer_4 {
