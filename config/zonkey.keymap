@@ -220,8 +220,10 @@
 &kp LEFT_SHIFT  &trans          &trans          &trans          &trans          &trans                   &trans  &trans          &trans          &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW
 &kp LCTRL       &kp LEFT_WIN    &kp LEFT_ALT    &lt 3 INT_HENKAN &lt 2 SPACE    &lt 1 INT_MUHENKAN       &kp BACKSPACE   &kp ENTER       &none           &kp DEL
             >;
-            sensor-bindings = <&scroll_up_down>;
+            sensor-bindings = <&rsr_vol>;
+            sensor-bindings = <&rsr_pg>;
         };
+
 
         layer_3 {
             bindings = <
@@ -241,8 +243,10 @@
 &kp LEFT_SHIFT  &trans          &trans        &trans          &trans          &trans          &kp DOT &kp KP_NUMBER_0  &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &kp EQUAL
 &kp LCTRL       &kp LEFT_WIN    &kp LEFT_ALT  &kp INT_HENKAN  &kp SPACE       &kp INT_MUHENKAN       &kp BACKSPACE    &kp ENTER        &none            &kp DEL
             >;
-            sensor-bindings = <&scroll_up_down>;
+            sensor-bindings = <&rsr_vol>;
+            sensor-bindings = <&rsr_pg>;
         };
+
 
         layer_5 {
             bindings = <
@@ -251,7 +255,8 @@
 &kp LEFT_SHIFT  &trans          &trans        &trans          &trans          &trans          &trans  &trans          &trans          &trans  &trans  &trans
 &kp LCTRL       &kp LEFT_WIN    &kp LEFT_ALT  &kp INT_HENKAN  &kp SPACE       &kp INT_MUHENKAN       &kp BACKSPACE    &kp ENTER        &none           &kp DEL
             >;
-            sensor-bindings = <&scroll_up_down>;
+            sensor-bindings = <&rsr_vol>;
+            sensor-bindings = <&rsr_pg>;
         };
 
         layer_6 {
@@ -261,7 +266,9 @@
 &trans  &trans  &trans  &trans  &trans  &trans          &trans  &trans  &trans    &trans    &trans    &trans
 &trans  &trans  &trans  &trans  &trans  &trans          &trans  &trans  &none     &trans
             >;
-            sensor-bindings = <&scroll_up_down>;
+            sensor-bindings = <&rsr_vol>;
+            sensor-bindings = <&rsr_pg>;
         };
+
     };
 };
