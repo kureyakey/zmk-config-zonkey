@@ -35,6 +35,6 @@ manifest:
     - name: zmk-behavior-runtime-sensor-rotate
       remote: cormoran
       revision: main
-      
-      self:
+
+  self:
     path: config
