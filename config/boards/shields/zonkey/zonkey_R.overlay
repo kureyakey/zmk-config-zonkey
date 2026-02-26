@@ -1,5 +1,5 @@
 #include <dt-bindings/zmk/input_transform.h>
-#include <dt-bindings/zmk/pointing.h>  // Added for mouse constants
+#include <dt-bindings/zmk/pointing.h> 
 #include "zonkey.dtsi"
 #include <input/processors.dtsi>
 #include <input/processors/runtime-input-processor.dtsi>
@@ -22,28 +22,8 @@
         };
     };
 
+    /* behaviors ブロックを一旦空にするか、my_none だけ残す */
     behaviors {
-        /* ここにリンカーが探しているノードの実体を定義します */
-        zip_xy_transform: zip_xy_transform {
-            compatible = "zmk,input-processor-transform";
-            #input-processor-cells = <1>;
-        };
-
-        zip_xy_to_scroll_mapper: zip_xy_to_scroll_mapper {
-            compatible = "zmk,input-processor-xy-to-scroll-mapper";
-            #input-processor-cells = <0>;
-        };
-
-        zip_scroll_transform: zip_scroll_transform {
-            compatible = "zmk,input-processor-transform";
-            #input-processor-cells = <1>;
-        };
-
-        zip_scroll_scaler: zip_scroll_scaler {
-            compatible = "zmk,input-processor-scaler";
-            #input-processor-cells = <2>;
-        };
-
         my_none: my_none {
             compatible = "zmk,behavior-none";
             #binding-cells = <0>;
@@ -51,6 +31,7 @@
     };
 };
 
+/* 以降の &default_transform, &kscan0, &pinctrl, &spi0 はそのまま */
 &default_transform {
     col-offset = <6>;
 };
