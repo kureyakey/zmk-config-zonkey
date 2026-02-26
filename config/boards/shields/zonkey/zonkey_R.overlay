@@ -4,29 +4,28 @@
 #include <behaviors/battery_history_request.dtsi>
 
 / {
+    // 1. Define the trackball_listener node here
+    trackball_listener {
+        compatible = "zmk,input-listener";
+        status = "okay";
+        device = <&trackball>;
+        input-processors = <&mouse_runtime_input_processor>;
+
+        scroller {
+            layers = <3>;
+            input-processors = <&zip_xy_transform INPUT_TRANSFORM_X_INVERT>,
+                               <&zip_xy_to_scroll_mapper>,
+                               <&zip_scroll_transform INPUT_TRANSFORM_X_INVERT>,
+                               <&zip_scroll_scaler 1 5>,
+                               <&scroll_runtime_input_processor>;
+        };
+    };
+
     behaviors {
-        // You generally don't need to redefine 'none' as it's in behaviors.dtsi, 
-        // but keeping it here is fine if you prefer.
         my_none: my_none {
             compatible = "zmk,behavior-none";
             #binding-cells = <0>;
         };
-    };
-};
-
-// This must be OUTSIDE the / { }; block because it is a reference (&)
-&trackball_listener {
-    status = "okay";
-    device = <&trackball>; // Changed from trackball_device to match your SPI label below
-    input-processors = <&mouse_runtime_input_processor>;
-
-    scroller {
-        layers = <3>;
-        input-processors = <&zip_xy_transform INPUT_TRANSFORM_X_INVERT>,
-                           <&zip_xy_to_scroll_mapper>,
-                           <&zip_scroll_transform INPUT_TRANSFORM_X_INVERT>,
-                           <&zip_scroll_scaler 1 5>,
-                           <&scroll_runtime_input_processor>;
     };
 };
 
