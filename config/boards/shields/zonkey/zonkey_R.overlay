@@ -5,13 +5,12 @@
 };
 
 &kscan0 {
-        col-gpios
-            = <&xiao_d 10 GPIO_ACTIVE_HIGH>
-            , <&xiao_d 9 GPIO_ACTIVE_HIGH> 
-            , <&xiao_d 8 GPIO_ACTIVE_HIGH> 
-            , <&xiao_d 7 GPIO_ACTIVE_HIGH> 
-            , <&gpio0 10 GPIO_ACTIVE_HIGH>
-            ;
+    col-gpios = <&xiao_d 10 GPIO_ACTIVE_HIGH>
+              , <&xiao_d 9 GPIO_ACTIVE_HIGH> 
+              , <&xiao_d 8 GPIO_ACTIVE_HIGH> 
+              , <&xiao_d 7 GPIO_ACTIVE_HIGH> 
+              , <&gpio0 10 GPIO_ACTIVE_HIGH>
+              ;
 };
 
 / {
@@ -26,16 +25,16 @@
     spi0_default: spi0_default {
         group1 {
             psels = <NRF_PSEL(SPIM_SCK, 0, 5)>,
-                <NRF_PSEL(SPIM_MOSI, 0, 4)>,
-                <NRF_PSEL(SPIM_MISO, 0, 4)>;
+        <NRF_PSEL(SPIM_MOSI, 0, 4)>,
+        <NRF_PSEL(SPIM_MISO, 0, 4)>;
         };
     };
 
     spi0_sleep: spi0_sleep {
         group1 {
             psels = <NRF_PSEL(SPIM_SCK, 0, 5)>,
-                <NRF_PSEL(SPIM_MOSI, 0, 4)>,
-                <NRF_PSEL(SPIM_MISO, 0, 4)>;
+        <NRF_PSEL(SPIM_MOSI, 0, 4)>,
+        <NRF_PSEL(SPIM_MISO, 0, 4)>;
             low-power-enable;
         };
     };
