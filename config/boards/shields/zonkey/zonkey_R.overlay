@@ -1,5 +1,6 @@
 #include "zonkey.dtsi"
 #include <input/processors.dtsi>
+#include <dt-bindings/zmk/input_transform.h> // ← これを追加しました
 #include <input/processors/runtime-input-processor.dtsi>
 #include <behaviors/battery_history_request.dtsi>
 
@@ -11,7 +12,7 @@
         };
     };
 
-    /* &trackball_listener が見つからないため、ここで直接定義します */
+    /* trackball_listener の定義 */
     trackball_listener: trackball_listener {
         compatible = "zmk,input-listener";
         status = "okay";
