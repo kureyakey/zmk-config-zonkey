@@ -63,6 +63,22 @@
             tapping-term-ms = <200>;
         };
 
+        rsr_vol: rsr_vol {
+        compatible = "zmk,behavior-runtime-sensor-rotate";
+        #sensor-binding-cells = <0>;
+        tap-ms = <20>;
+        cw-binding = <&kp C_VOL_DN>;
+        ccw-binding = <&kp C_VOL_UP>;
+    };
+
+    rsr_pg: rsr_pg {
+        compatible = "zmk,behavior-runtime-sensor-rotate";
+        #sensor-binding-cells = <0>;
+        tap-ms = <20>;
+        cw-binding = <&kp PG_UP>;
+        ccw-binding = <&kp PAGE_DOWN>;
+    };
+
         scroll_up_down: behavior_sensor_rotate_mouse_wheel_up_down {
             compatible = "zmk,behavior-sensor-rotate";
             #sensor-binding-cells = <0>;
