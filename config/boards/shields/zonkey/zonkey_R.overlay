@@ -10,21 +10,22 @@
             #binding-cells = <0>;
         };
     };
+}; // ここでルートノードを閉じます
 
-    &trackball_listener {
+/* &からはじまる「参照」はルートノードの外側に記述します */
+&trackball_listener {
     status = "okay";
-    device = <&trackball_device>;
+    device = <&trackball>; // 下のspi0内で定義した「trackball」に合わせます
     input-processors = <&mouse_runtime_input_processor>;
 
     scroller {
         layers = <5>;
         input-processors =
-            <&zip_xy_transform INPUT_TRANSFORM_X_INVERT
-             &zip_xy_to_scroll_mapper
-             &zip_scroll_transform INPUT_TRANSFORM_X_INVERT
-             &zip_scroll_scaler 1 5
-             &scroll_runtime_input_processor>;
-       };
+            <&zip_xy_transform INPUT_TRANSFORM_X_INVERT>,
+            <&zip_xy_to_scroll_mapper>,
+            <&zip_scroll_transform INPUT_TRANSFORM_X_INVERT>,
+            <&zip_scroll_scaler 1 5>,
+            <&scroll_runtime_input_processor>;
     };
 };
 
