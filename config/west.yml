@@ -6,16 +6,12 @@ manifest:
       url-base: https://github.com/cormoran
     - name: kureyakey
       url-base: https://github.com/kureyakey
-    - name: caksoylar  # <-- new entry
+    - name: caksoylar
       url-base: https://github.com/caksoylar  
   projects:
     - name: zmk
       remote: zmkfirmware
       revision: v0.3
-      import: app/west.yml
-     - name: zmk
-      remote: cormoran
-      revision: v0.3-branch+dya
       import: app/west.yml
     - name: zmk-module-ble-management
       remote: cormoran
