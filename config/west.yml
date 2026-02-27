@@ -10,8 +10,8 @@ manifest:
       url-base: https://github.com/caksoylar  
   projects:
     - name: zmk
-      remote: cormoran          # ここを必ず cormoran にしてください
-      revision: v0.3-branch+dya # このブランチは cormoran 氏のリポジトリにあります
+      remote: cormoran          
+      revision: v0.3-branch+dya
       import: app/west.yml
     - name: zmk-module-ble-management
       remote: cormoran
