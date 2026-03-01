@@ -28,11 +28,6 @@ manifest:
     - name: zmk-behavior-runtime-sensor-rotate
       remote: cormoran
       revision: main
-    - name: zmk
-      remote: cormoran
-      revision: v0.3+custom-studio-protocol
-      import:
-        file: app/west.yml
     - name: zmk-pmw3610-driver
       remote: kureyakey
       revision: main
