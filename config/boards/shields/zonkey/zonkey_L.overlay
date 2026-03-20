@@ -1,10 +1,6 @@
 #include "zonkey.dtsi"
 #include <behaviors/battery_history_request.dtsi>
 
-/ {
-    /* Custom behaviors can go here, but avoid redefining 'none' */
-};
-
 &kscan0 {
     col-gpios
         = <&xiao_d 10 GPIO_ACTIVE_HIGH>
