@@ -1,18 +1,24 @@
 #include "zonkey.dtsi"
 #include <input/processors.dtsi>
-#include <dt-bindings/zmk/input_transform.h> // ← これを追加しました
 #include <input/processors/runtime-input-processor.dtsi>
 #include <behaviors/battery_history_request.dtsi>
+#include <dt-bindings/zmk/input_transform.h>
+
+&default_transform {
+    col-offset = <6>;
+};
+
+&kscan0 {
+    col-gpios
+        = <&xiao_d 10 GPIO_ACTIVE_HIGH>
+        , <&xiao_d 9 GPIO_ACTIVE_HIGH> 
+        , <&xiao_d 8 GPIO_ACTIVE_HIGH> 
+        , <&xiao_d 7 GPIO_ACTIVE_HIGH> 
+        , <&gpio0 10 GPIO_ACTIVE_HIGH>
+        ;
+};
 
 / {
-    behaviors {
-        none: none {
-            compatible = "zmk,behavior-none";
-            #binding-cells = <0>;
-        };
-    };
-
-    /* trackball_listener の定義 */
     trackball_listener: trackball_listener {
         compatible = "zmk,input-listener";
         status = "okay";
@@ -29,20 +35,6 @@
                 <&scroll_runtime_input_processor>;
         };
     };
-};
-
-&default_transform {
-    col-offset = <6>;
-};
-
-&kscan0 {
-    col-gpios
-        = <&xiao_d 10 GPIO_ACTIVE_HIGH>
-        , <&xiao_d 9 GPIO_ACTIVE_HIGH> 
-        , <&xiao_d 8 GPIO_ACTIVE_HIGH> 
-        , <&xiao_d 7 GPIO_ACTIVE_HIGH> 
-        , <&gpio0 10 GPIO_ACTIVE_HIGH>
-        ;
 };
 
 &pinctrl {
@@ -63,6 +55,8 @@
         };
     };
 };
+
+&xiao_serial { status = "disabled"; };
 
 &spi0 {
     status = "okay";
