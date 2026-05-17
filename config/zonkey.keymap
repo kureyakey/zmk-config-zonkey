@@ -54,14 +54,17 @@
     };
 
     behaviors {
-        lt_to_layer_0: lt_to_layer_0 {
+   
+        lt_repeat: lt_repeat {
             compatible = "zmk,behavior-hold-tap";
-            label = "LAYER_TAP_TO_0";
-            bindings = <&mo>, <&to_layer_0>;
-
+            label = "LAYER_TAP_REPEAT";
+            bindings = <&mo>, <&kp>;
             #binding-cells = <2>;
-            tapping-term-ms = <200>;
+            flavor = "hold-preferred";  // 長押しを少し強めに優先
+            tapping-term-ms = <1000>;    // 長押し判定（好みに応じて200〜300で調整）
+            quick-tap-ms = <900>;      // タップ+長押しでリピートさせる時間
         };
+
 
         rsr_vol: rsr_vol {
         compatible = "zmk,behavior-runtime-sensor-rotate";
