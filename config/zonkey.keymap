@@ -65,7 +65,6 @@
             quick-tap-ms = <900>;      // タップ+長押しでリピートさせる時間
         };
 
-
         rsr_vol: rsr_vol {
         compatible = "zmk,behavior-runtime-sensor-rotate";
         #sensor-binding-cells = <0>;
