@@ -5,20 +5,20 @@
 };
 
 &kscan0 {
-    col-gpios
-        = <&xiao_d 10 GPIO_ACTIVE_HIGH>
-        , <&xiao_d 9 GPIO_ACTIVE_HIGH> 
-        , <&xiao_d 8 GPIO_ACTIVE_HIGH> 
-        , <&xiao_d 7 GPIO_ACTIVE_HIGH> 
-        , <&gpio0 10 GPIO_ACTIVE_HIGH>
-        ;
+        col-gpios
+            = <&xiao_d 10 GPIO_ACTIVE_HIGH>
+            , <&xiao_d 9 GPIO_ACTIVE_HIGH> 
+            , <&xiao_d 8 GPIO_ACTIVE_HIGH> 
+            , <&xiao_d 7 GPIO_ACTIVE_HIGH> 
+            , <&gpio0 10 GPIO_ACTIVE_HIGH>
+            ;
 };
 
 / {
-    // 修正ポイント1: Zephyr 4.1規格のinput-listenerノード定義
-    trackball_listener: trackball_listener {
+    trackball_listener {
         compatible = "zmk,input-listener";
         device = <&trackball>;
+
     };
 };
 
@@ -49,18 +49,14 @@
     pinctrl-names = "default", "sleep";
     cs-gpios = <&gpio0 9 GPIO_ACTIVE_LOW>;
 
-    trackball: pmw3610@0 {
+    trackball: trackball@0 {
         status = "okay";
-        // 修正ポイント2: Zephyr 4.1標準ドライバーの compatible
         compatible = "pixart,pmw3610";
         reg = <0>;
         spi-max-frequency = <2000000>;
         irq-gpios = <&gpio0 2 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
-        
-        // 修正ポイント3: Zephyr 4.1(ZMK Main)仕様のプロパティ名
         automouse-layer = <6>;
-        // scroll-layers = <5>; 
-        // ↑ Zephyr 4.1標準のPMW3610はスクロールレイヤー制御をドライバー側で持っていません。
-        // スクロール切り替えは今後のキーマップ側のbehavior（&ibv）等で制御するため、一旦コメントアウトします。
+        scroll-layers = <5>;
+
     };
 };
