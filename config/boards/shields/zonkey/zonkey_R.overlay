@@ -1,4 +1,5 @@
 #include "zonkey.dtsi"
+#include <zephyr/dt-bindings/input/input-event-codes.h>
 
 &default_transform {
     col-offset = <6>;
