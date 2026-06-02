@@ -18,9 +18,9 @@
 #
 ---
 include:
-  - board: xiao_ble@zmk
+  - board: seeeduino_xiao_ble
     shield: zonkey_R rgbled_adapter
-  - board: xiao_ble@zmk
+  - board: seeeduino_xiao_ble
     shield: zonkey_L rgbled_adapter
-  - board: xiao_ble@zmk
+  - board: seeeduino_xiao_ble
     shield: settings_reset
