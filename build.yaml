@@ -18,9 +18,12 @@
 #
 ---
 include:
-  - board: xiao_ble@ZMK
+  - board: xiao_ble
     shield: zonkey_R rgbled_adapter
-  - board: xiao_ble@ZMK
+    cmake-args: -DCONFIG_ZMK_BOARD_COMPAT=y
+  - board: xiao_ble
     shield: zonkey_L rgbled_adapter
-  - board: xiao_ble@ZMK
+    cmake-args: -DCONFIG_ZMK_BOARD_COMPAT=y
+  - board: xiao_ble
     shield: settings_reset
+    cmake-args: -DCONFIG_ZMK_BOARD_COMPAT=y
