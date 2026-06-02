@@ -11,7 +11,7 @@ manifest:
   projects:
     - name: zmk
       remote: cormoran          
-      revision: v0.3-branch+dya
+      revision: main+dya
       import: app/west.yml
     - name: zmk-module-ble-management
       remote: cormoran
