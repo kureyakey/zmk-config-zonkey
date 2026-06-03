@@ -1,7 +1,0 @@
-osource "/Users/goya/zmk-config-zonkey/zmk-module-ble-management/boards/shields/*/Kconfig.defconfig"
-osource "/Users/goya/zmk-config-zonkey/zmk-module-battery-history/boards/shields/*/Kconfig.defconfig"
-osource "/Users/goya/zmk-config-zonkey/zmk-module-settings-rpc/boards/shields/*/Kconfig.defconfig"
-osource "/Users/goya/zmk-config-zonkey/zmk-module-runtime-input-processor/boards/shields/*/Kconfig.defconfig"
-osource "/Users/goya/zmk-config-zonkey/zmk-behavior-runtime-sensor-rotate/boards/shields/*/Kconfig.defconfig"
-osource "/Users/goya/zmk-config-zonkey/zmk-rgbled-widget/boards/shields/*/Kconfig.defconfig"
-osource "/Users/goya/zmk-config-zonkey/zmk/app/boards/shields/*/Kconfig.defconfig"
