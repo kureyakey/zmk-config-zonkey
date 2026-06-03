@@ -65,22 +65,6 @@
             quick-tap-ms = <900>;      // タップ+長押しでリピートさせる時間
         };
 
-        rsr_vol: rsr_vol {
-            compatible = "zmk,behavior-runtime-sensor-rotate";
-            #sensor-binding-cells = <0>;
-            tap-ms = <20>;
-            cw-binding = <&kp C_VOL_DN>;
-            ccw-binding = <&kp C_VOL_UP>;
-        };
-
-        rsr_pg: rsr_pg {
-            compatible = "zmk,behavior-runtime-sensor-rotate";
-            #sensor-binding-cells = <0>;
-            tap-ms = <20>;
-            cw-binding = <&kp PG_UP>;
-            ccw-binding = <&kp PAGE_DOWN>;
-        };
-
         scroll_up_down: behavior_sensor_rotate_mouse_wheel_up_down {
             compatible = "zmk,behavior-sensor-rotate";
             #sensor-binding-cells = <0>;
@@ -124,7 +108,7 @@
 &mt LCTL ESC    &kp LEFT_WIN  &kp LEFT_ALT  &lt 3 INT_HENKAN  &lt 2 SPACE  &lt 1 INT_MUHENKAN                 &kp BACKSPACE  &kp ENTER                                                          &kp DEL
             >;
 
-            sensor-bindings = <&rsr_vol>;
+            sensor-bindings = <&scroll_up_down>;
         };
 
         layer_2 {
@@ -141,7 +125,7 @@
 &kp LCTRL       &kp LEFT_WIN  &kp LEFT_ALT  &lt 3 INT_HENKAN  &lt 2 SPACE  &lt 1 INT_MUHENKAN            &kp BACKSPACE  &kp ENTER                                                   &kp DEL
             >;
 
-            sensor-bindings = <&rsr_pg>;
+            sensor-bindings = <&scroll_up_down>;
         };
 
         layer_3 {
