@@ -263,7 +263,7 @@ layers:
   - INT MUHENKAN
   - BACKSPACE
   - ENTER
-  - ''
+  - DEL
   '6':
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -305,6 +305,6 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
+  - BACKSPACE
+  - ENTER
+  - DEL
