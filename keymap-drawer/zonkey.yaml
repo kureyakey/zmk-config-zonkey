@@ -305,6 +305,7 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - BACKSPACE
-  - ENTER
-  - DEL
+  - BACKSPACE # 追加
+  - ENTER     # 追加
+  - DEL       # 追加
+この修正を行い、すべてのレイヤーが「43」で揃ったことを確認してから再度ビルド・書き込みを行ってください。これでStudioのクラッシュは解消されるはずです。
