@@ -1,0 +1,33 @@
+# WARNING. THIS FILE IS AUTO-GENERATED. DO NOT MODIFY!
+#
+# This file contains build system settings derived from your modules.
+#
+# Modules may be set via ZEPHYR_MODULES, ZEPHYR_EXTRA_MODULES,
+# and/or the west manifest file.
+#
+# See the Modules guide for more information.
+"BOARD_ROOT":"/Users/goya/zmk-config-zonkey/zmk-module-ble-management"
+"DTS_ROOT":"/Users/goya/zmk-config-zonkey/zmk-module-ble-management"
+"SNIPPET_ROOT":"/Users/goya/zmk-config-zonkey/zmk-module-ble-management"
+"BOARD_ROOT":"/Users/goya/zmk-config-zonkey/zmk-module-battery-history"
+"DTS_ROOT":"/Users/goya/zmk-config-zonkey/zmk-module-battery-history"
+"SNIPPET_ROOT":"/Users/goya/zmk-config-zonkey/zmk-module-battery-history"
+"BOARD_ROOT":"/Users/goya/zmk-config-zonkey/zmk-module-settings-rpc"
+"DTS_ROOT":"/Users/goya/zmk-config-zonkey/zmk-module-settings-rpc"
+"SNIPPET_ROOT":"/Users/goya/zmk-config-zonkey/zmk-module-settings-rpc"
+"BOARD_ROOT":"/Users/goya/zmk-config-zonkey/zmk-module-runtime-input-processor"
+"DTS_ROOT":"/Users/goya/zmk-config-zonkey/zmk-module-runtime-input-processor"
+"SNIPPET_ROOT":"/Users/goya/zmk-config-zonkey/zmk-module-runtime-input-processor"
+"BOARD_ROOT":"/Users/goya/zmk-config-zonkey/zmk-behavior-runtime-sensor-rotate"
+"DTS_ROOT":"/Users/goya/zmk-config-zonkey/zmk-behavior-runtime-sensor-rotate"
+"SNIPPET_ROOT":"/Users/goya/zmk-config-zonkey/zmk-behavior-runtime-sensor-rotate"
+"DTS_ROOT":"/Users/goya/zmk-config-zonkey/zmk-pmw3610-driver"
+"BOARD_ROOT":"/Users/goya/zmk-config-zonkey/zmk-rgbled-widget"
+"DTS_ROOT":"/Users/goya/zmk-config-zonkey/zmk-rgbled-widget"
+"DTS_ROOT":"/Users/goya/zmk-config-zonkey/modules/hal/atmel"
+"DTS_ROOT":"/Users/goya/zmk-config-zonkey/modules/hal/espressif"
+"DTS_ROOT":"/Users/goya/zmk-config-zonkey/modules/hal/gigadevice"
+"DTS_ROOT":"/Users/goya/zmk-config-zonkey/modules/hal/nuvoton"
+"DTS_ROOT":"/Users/goya/zmk-config-zonkey/modules/hal/stm32"
+"DTS_ROOT":"/Users/goya/zmk-config-zonkey/zmk/app/module"
+"MODULE_EXT_ROOT":"/Users/goya/zmk-config-zonkey/zmk/app/keymap-module"

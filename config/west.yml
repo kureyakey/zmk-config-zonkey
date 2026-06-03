@@ -35,4 +35,4 @@ manifest:
       remote: caksoylar
       revision: v0.3
   self:
-    path: config
+    path: zmk/app

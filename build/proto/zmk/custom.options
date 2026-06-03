@@ -1,0 +1,2 @@
+zmk.custom.CustomSubsystemInfo.identifier max_size:32 fixed_length:true
+zmk.custom.CallRequest.payload max_size:25
