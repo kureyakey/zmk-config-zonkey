@@ -190,10 +190,10 @@
 
         layer_6 {
             bindings = <
-&trans  &trans  &trans  &trans  &trans              &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &mkp MB1  &mkp MB3  &mkp MB2  &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &kp BACKSPACE  &kp ENTER  &kp DEL
+&trans          &trans        &trans        &trans        &trans          &trans  &trans  &trans  &trans  &trans
+&trans          &trans        &trans        &trans        &trans  &trans  &trans  &trans  &mkp MB1  &mkp MB3  &mkp MB2  &trans
+&trans          &trans        &trans        &trans        &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans          &trans        &trans        &trans        &trans  &trans  &trans  &kp BACKSPACE  &kp ENTER  &kp DEL
             >;
             sensor-bindings = <&scroll_up_down>;
         };
