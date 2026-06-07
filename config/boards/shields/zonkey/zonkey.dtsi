@@ -3,13 +3,7 @@
 
 / {
     chosen {
-        zmk,physical-layout = &soa44_physical_layout;
-        zmk,battery = &non_lipo_battery;
-        zmk,ws2812-widget = &led_strip;
-    };
-
- aliases {
-        led-strip = &led_strip;
+        zmk,physical-layout = &physical_layout0;
     };
 
     physical_layout0: physical_layout_0 {
