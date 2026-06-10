@@ -1,5 +1,4 @@
 #include "zonkey.dtsi"
-#include <behaviors/battery_history_request.dtsi>
 
 &kscan0 {
     col-gpios
