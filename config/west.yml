@@ -18,7 +18,7 @@ manifest:
       revision: zmk-v0.3.0.0
     - name: zmk-module-settings-rpc
       remote: cormoran
-      revision: zmk-v0.3.0.0
+      revision: main
     - name: zmk-module-runtime-input-processor
       remote: cormoran
       revision: zmk-v0.3.0.0
