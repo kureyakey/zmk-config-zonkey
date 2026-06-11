@@ -22,6 +22,7 @@ include:
     shield: zonkey_L rgbled_adapter
   - board: seeeduino_xiao_ble
     shield: zonkey_R rgbled_adapter
+    snippet: studio-rpc-usb-uart
   - board: seeeduino_xiao_ble
     snippet: studio-rpc-usb-uart
     shield: settings_reset
