@@ -1,0 +1,307 @@
+#include <behaviors.dtsi>
+#include <dt-bindings/zmk/bt.h>
+#include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/pointing.h>
+
+#define ZMK_POINTING_DEFAULT_SCRL_VAL 100
+#define MOUSE 6
+#define JP_DQUOTE       AT                // "
+#define JP_AMPERSAND    CARET             // &
+#define JP_QUOTE        AMPERSAND         // '
+#define JP_EQUAL        UNDER             // =
+#define JP_CARET        EQUAL             // ^
+#define JP_YEN          0x89              // ¥
+#define JP_PLUS         COLON             // +
+#define JP_TILDE        PLUS              // ~
+#define JP_PIPE         LS(0x89)          // |
+#define JP_AT           LEFT_BRACKET      // @
+#define JP_COLON        SINGLE_QUOTE      // :
+#define JP_ASTERISK     DOUBLE_QUOTES     // *
+#define JP_BACKQUOTE    LEFT_BRACE        // `
+#define JP_UNDERSCORE   LS(0x87)          // _
+#define JP_LBRACKET     RIGHT_BRACKET     // [
+#define JP_RBRACKET     BACKSLASH         // ]
+#define JP_LPAREN       ASTERISK          // (
+#define JP_RPAREN       LEFT_PARENTHESIS  // )
+#define JP_LBRACE       RIGHT_BRACE       // {
+#define JP_RBRACE       PIPE              // }
+#define JP_KANA         LANGUAGE_1        // かな
+#define JP_EISU         LANGUAGE_2        // 英数
+#define JP_HANZEN       GRAVE             // 半角/全角
+#define JP_BSLH  INT1         // (backslash)
+
+&mt {
+    flavor = "balanced";
+    quick-tap-ms = <0>;
+};
+
+/ {
+    combos { compatible = "zmk,combos"; };
+
+    mo2: mo2 {
+        compatible = "zmk,behavior-mod-morph";
+        #binding-cells = <0>;
+        bindings = <&kp N2>, <&kp AT>;
+
+        mods = <(MOD_LSFT|MOD_RSFT)>;
+    };
+
+    mo6: mo6 {
+        compatible = "zmk,behavior-mod-morph";
+        #binding-cells = <0>;
+        bindings = <&kp N6>, <&kp CARET>;
+
+        mods = <(MOD_LSFT|MOD_RSFT)>;
+    };
+
+    mo7: mo7 {
+        compatible = "zmk,behavior-mod-morph";
+        #binding-cells = <0>;
+        bindings = <&kp N7>, <&kp AMPS>;
+
+        mods = <(MOD_LSFT|MOD_RSFT)>;
+    };
+
+    mo8: mo8 {
+        compatible = "zmk,behavior-mod-morph";
+        #binding-cells = <0>;
+        bindings = <&kp N8>, <&kp ASTRK>;
+
+        mods = <(MOD_LSFT|MOD_RSFT)>;
+    };
+
+    mo9: mo9 {
+        compatible = "zmk,behavior-mod-morph";
+        #binding-cells = <0>;
+        bindings = <&kp N9>, <&kp LPAR>;
+
+        mods = <(MOD_LSFT|MOD_RSFT)>;
+    };
+
+    mo0: mo0 {
+        compatible = "zmk,behavior-mod-morph";
+        #binding-cells = <0>;
+        bindings = <&kp N0>, <&kp LS(N9)>;
+
+        mods = <(MOD_LSFT|MOD_RSFT)>;
+    };
+
+    moA: moA {
+        compatible = "zmk,behavior-mod-morph";
+        #binding-cells = <0>;
+        bindings = <&kp MINUS>, <&kp UNDERSCORE>;
+
+        mods = <(MOD_LSFT|MOD_RSFT)>;
+    };
+
+    moB: moB {
+        compatible = "zmk,behavior-mod-morph";
+        #binding-cells = <0>;
+        bindings = <&kp EQUAL>, <&kp PLUS>;
+
+        mods = <(MOD_LSFT|MOD_RSFT)>;
+    };
+
+    moC: moC {
+        compatible = "zmk,behavior-mod-morph";
+        #binding-cells = <0>;
+        bindings = <&kp INT3>, <&kp JP_PIPE>;
+
+        mods = <(MOD_LSFT|MOD_RSFT)>;
+    };
+
+    moD: moD {
+        compatible = "zmk,behavior-mod-morph";
+        #binding-cells = <0>;
+        bindings = <&kp LBKT>, <&kp LBRC>;
+
+        mods = <(MOD_LSFT|MOD_RSFT)>;
+    };
+
+    moE: moE {
+        compatible = "zmk,behavior-mod-morph";
+        #binding-cells = <0>;
+        bindings = <&kp RBKT>, <&kp RBRC>;
+
+        mods = <(MOD_LSFT|MOD_RSFT)>;
+    };
+
+    moF: moF {
+        compatible = "zmk,behavior-mod-morph";
+        #binding-cells = <0>;
+        bindings = <&kp SEMI>, <&kp KP_PLUS>;
+
+        mods = <(MOD_LSFT|MOD_RSFT)>;
+    };
+
+    moG: moG {
+        compatible = "zmk,behavior-mod-morph";
+        #binding-cells = <0>;
+        bindings = <&kp APOSTROPHE>, <&kp DQT>;
+
+        mods = <(MOD_LSFT|MOD_RSFT)>;
+    };
+
+    moH: moH {
+        compatible = "zmk,behavior-mod-morph";
+        #binding-cells = <0>;
+        bindings = <&kp BACKSLASH>, <&kp TILDE2>;
+
+        mods = <(MOD_LSFT|MOD_RSFT)>;
+    };
+
+    moI: moI {
+        compatible = "zmk,behavior-mod-morph";
+        #binding-cells = <0>;
+        bindings = <&kp JP_BSLH>, <&kp JP_UNDERSCORE>;
+
+        mods = <(MOD_LSFT|MOD_RSFT)>;
+    };
+
+    macros {
+        to_layer_0: to_layer_0 {
+            compatible = "zmk,behavior-macro-one-param";
+            #binding-cells = <1>;
+            bindings = <&to 0 &macro_param_1to1 &kp MACRO_PLACEHOLDER>;
+            label = "TO_LAYER_0";
+        };
+    };
+
+    behaviors {
+        lt_to_layer_0: lt_to_layer_0 {
+            compatible = "zmk,behavior-hold-tap";
+            label = "LAYER_TAP_TO_0";
+            bindings = <&mo>, <&to_layer_0>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+        };
+
+        scroll_up_down: behavior_sensor_rotate_mouse_wheel_up_down {
+            compatible = "zmk,behavior-sensor-rotate";
+            #sensor-binding-cells = <0>;
+            bindings = <&msc SCRL_DOWN>, <&msc SCRL_UP>;
+
+            tap-ms = <20>;
+        };
+    };
+
+    keymap {
+        compatible = "zmk,keymap";
+
+        default_layer {
+            // -----------------------------------------------------------------------------------------
+            // |  Q  |  W  |  E  |  R  |  T  |                        |  Y  |  U   |  I  |  O  |  P  | 
+            // |  A  |  S  |  D  |  F  |  G  |LS(LG(S))|        　 | - |  H  |  J   |  K  |  L  |  `  | 
+            // |SHIFT|  Z  |  X  |  C  |  V  |  B  |           | B |  N  |  M   |  ,  |  .  |  /  | 
+            // | CTRL | WIN | ALT |HENKAN|SPACE|MUHENKAN|       | BS | ENT |      　　　　       | DEL |           
+
+            bindings = <
+&kp Q           &kp W         &kp E         &kp R             &kp T                                         &kp Y          &kp U      &kp I      &kp O    &kp P
+&kp A           &kp S         &kp D         &kp F             &kp G        &kp LS(LG(S))         &kp B      &kp H          &kp J      &kp K      &kp L    &kp SQT
+&kp LEFT_SHIFT  &kp Z         &kp X         &lt 6 C           &lt 5 V      &lt 4 B               &kp MINUS  &kp N          &kp M      &kp COMMA  &kp DOT  &kp SLASH
+&kp LCTRL       &kp LEFT_WIN  &kp LEFT_ALT  &lt 3 INT_HENKAN  &lt 2 SPACE  &lt 1 INT_MUHENKAN               &kp BACKSPACE  &kp ENTER                                 &kp DEL
+            >;
+
+            sensor-bindings =
+                <&scroll_up_down>,
+                <&inc_dec_kp C_VOL_DN C_VOL_UP>;
+        };
+
+        layer_1 {
+            // -----------------------------------------------------------------------------------------
+            // |CAPS　| 　　|     |     |                    　　　　　　 |     |     |  -  |  ^  |  ¥  |
+            // | TAB |     |     |     |     |     |              |    |     |     |     |  @  |  [  |
+            // |SHIFT|     |     |     |     |     |           　 | 英数 | かな |    |  ; |  :  |  ]  |
+            // | CTRL| WIN | ALT |HENKAN|SPACE|MUHENKAN|         | BS | ENT |                   | DEL |
+
+            bindings = <
+&kp CAPSLOCK    &kp GRAVE     &trans        &trans            &trans                                          &trans         &trans     &moA  &moB  &moC
+&kp TAB         &trans        &trans        &trans            &trans       &trans                &kp JP_EISU  &trans         &trans     &moD  &moE  &kp ENTER
+&kp LEFT_SHIFT  &trans        &trans        &trans            &trans       &trans                &trans       &kp JP_KANA    &moF       &moG  &moH  &kp ENTER
+&mt LCTL ESC    &kp LEFT_WIN  &kp LEFT_ALT  &lt 3 INT_HENKAN  &lt 2 SPACE  &lt 1 INT_MUHENKAN                 &kp BACKSPACE  &kp ENTER                         &kp DEL
+            >;
+
+            sensor-bindings = <&scroll_up_down>;
+        };
+
+        layer_2 {
+            // -----------------------------------------------------------------------------------------
+            // |  1  |  2  |  3  |  4  |  5  |                     |  6  |  7  |  8  |  9  |   0  |
+            // |      |     |     |     |     |     |           |    |     |     |     |  ↑  |      |
+            // |SHIFT|     |     |     |     |     |           |     |     |     |  ←  |  ↓  |  →  |
+            // | CTRL| WIN | ALT |HENKAN|SPACE|MUHENKAN|         | BS | ENT |                   | DEL |
+
+            bindings = <
+&kp N1          &mo2          &kp N3        &kp N4            &kp N5                             &mo6    &mo7           &mo8       &mo9            &mo0
+&trans          &trans        &trans        &trans            &trans       &trans                &trans  &trans         &trans     &trans          &kp UP_ARROW    &trans
+&kp LEFT_SHIFT  &trans        &trans        &trans            &trans       &trans                &trans  &trans         &trans     &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW
+&kp LCTRL       &kp LEFT_WIN  &kp LEFT_ALT  &lt 3 INT_HENKAN  &lt 2 SPACE  &lt 1 INT_MUHENKAN            &kp BACKSPACE  &kp ENTER                                                   &kp DEL
+            >;
+
+            sensor-bindings = <&scroll_up_down>;
+        };
+
+        layer_3 {
+            // -----------------------------------------------------------------------------------------
+            // | F1  | F2  | F3  | F4  | F5  |                     | F6  | F7 | F8  | F9 | F10 |
+            // | F11 | F12 |     |     |     |     |           |    |     |     |     |     |      |
+            // |SHIFT|     |     |     |     |     |           |     |     |     |     |     |      |
+            // | CTRL| WIN | ALT |HENKAN|SPACE|MUHENKAN|         | BS | ENT |                   | DEL |
+
+            bindings = <
+&kp F1          &kp F2        &kp F3        &kp F4            &kp F5                                     &kp F6         &kp F7     &kp F8  &kp F9  &kp F10
+&kp F11         &kp F12       &trans        &trans            &trans       &trans                &trans  &trans         &trans     &trans  &trans  &trans
+&kp LEFT_SHIFT  &trans        &trans        &trans            &trans       &trans                &trans  &trans         &trans     &trans  &trans  &trans
+&kp LCTRL       &kp LEFT_WIN  &kp LEFT_ALT  &lt 3 INT_HENKAN  &lt 2 SPACE  &lt 1 INT_MUHENKAN            &kp BACKSPACE  &kp ENTER                           &kp DEL
+            >;
+
+            sensor-bindings = <&scroll_up_down>;
+        };
+
+        layer_4 {
+            // -----------------------------------------------------------------------------------------
+            // | BT0 | BT1 | BT2 | BT3 | BT4 |                        |  -  |  7  |  8  |  9  |  +  |
+            // |BTCLR |     |     |     |     |     |                 |  /  |  4  |  5  |  6  |  *  | 
+            // |SHIFT|     |     |     |     |     |           |  .  |  0  |  1  |  2  |   3  |  =  |
+            // | CTRL| WIN | ALT |HENKAN|SPACE|MUHENKAN|        | BS | ENT |                  | DEL |
+
+            bindings = <
+&bt BT_SEL 0    &bt BT_SEL 1    &bt BT_SEL 2  &bt BT_SEL 3    &bt BT_SEL 4                               &kp MINUS        &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9  &kp PLUS
+&bt BT_CLR      &bt BT_CLR_ALL  &trans        &trans          &trans        &trans              &trans   &kp SLASH        &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_NUMBER_6  &kp ASTERISK
+&kp LEFT_SHIFT  &trans          &trans        &trans          &trans        &trans              &kp DOT  &kp KP_NUMBER_0  &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &kp EQUAL
+&kp LCTRL       &kp LEFT_WIN    &kp LEFT_ALT  &kp INT_HENKAN  &kp SPACE     &kp INT_MUHENKAN             &kp BACKSPACE    &kp ENTER                                                        &kp DEL
+            >;
+
+            sensor-bindings = <&scroll_up_down>;
+        };
+
+        layer_5 {
+            // -----------------------------------------------------------------------------------------
+            // |      |     |     |     |     |                     |     |     |     |     |      |
+            // |      |     |     |     |     |     |           |    |     |     |     |     |      |
+            // |SHIFT|     |     |     |     |     |          |     |     |     |     |     |      |
+            // | CTRL| WIN | ALT |HENKAN|SPACE|MUHENKAN|        | BS | ENT |                  | DEL |
+
+            bindings = <
+&trans          &trans        &trans        &trans          &trans                                 &trans         &trans     &trans  &trans  &trans
+&trans          &trans        &trans        &trans          &trans     &trans              &trans  &trans         &trans     &trans  &trans  &trans
+&kp LEFT_SHIFT  &trans        &trans        &trans          &trans     &trans              &trans  &trans         &trans     &trans  &trans  &trans
+&kp LCTRL       &kp LEFT_WIN  &kp LEFT_ALT  &kp INT_HENKAN  &kp SPACE  &kp INT_MUHENKAN            &kp BACKSPACE  &kp ENTER                          &kp DEL
+            >;
+
+            sensor-bindings = <&scroll_up_down>;
+        };
+
+        layer_6 {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans                    &trans  &trans    &trans    &trans    &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &mkp MB1  &mkp MB3  &mkp MB2  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans    &trans    &trans    &trans
+&trans  &trans  &trans  &trans  &trans  &trans            &trans  &trans                                &trans
+            >;
+
+            sensor-bindings = <&scroll_up_down>;
+        };
+    };
+};
