@@ -53,10 +53,15 @@
         status = "okay";
         compatible = "pixart,pmw3610";
         reg = <0>;
-        spi-max-frequency = <2000000>;
-        irq-gpios = <&gpio0 2 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
-        automouse-layer = <6>;
-        scroll-layers = <5>;
-
+        spi-max-frequency = <500000>; // 先ほど提案した減速設定
+        motion-gpios = <&gpio1 0 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
+        zephyr,axis-x = <INPUT_REL_X>;
+        zephyr,axis-y = <INPUT_REL_Y>;
+        
+        /* 🛠️ エラーの原因：CPI関連の設定行を完全に削除 */
+        /* cpi-value = <400>; */ 
+        
+        invert-y;
+        wakeup-source;
     };
 };
