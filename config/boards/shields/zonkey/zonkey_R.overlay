@@ -5,20 +5,19 @@
 };
 
 &kscan0 {
-        col-gpios
-            = <&xiao_d 10 GPIO_ACTIVE_HIGH>
-            , <&xiao_d 9 GPIO_ACTIVE_HIGH> 
-            , <&xiao_d 8 GPIO_ACTIVE_HIGH> 
-            , <&xiao_d 7 GPIO_ACTIVE_HIGH> 
-            , <&gpio0 10 GPIO_ACTIVE_HIGH>
-            ;
+    col-gpios
+        = <&xiao_d 10 GPIO_ACTIVE_HIGH>
+        , <&xiao_d 9 GPIO_ACTIVE_HIGH> 
+        , <&xiao_d 8 GPIO_ACTIVE_HIGH> 
+        , <&xiao_d 7 GPIO_ACTIVE_HIGH> 
+        , <&gpio0 10 GPIO_ACTIVE_HIGH>
+        ;
 };
 
 / {
     trackball_listener {
         compatible = "zmk,input-listener";
         device = <&trackball>;
-
     };
 };
 
@@ -51,17 +50,21 @@
 
     trackball: trackball@0 {
         status = "okay";
+        /* 🛠️ コンパイルを通すため、ここだけ正規の「-altなし」に維持します */
         compatible = "pixart,pmw3610";
         reg = <0>;
-        spi-max-frequency = <500000>; // 先ほど提案した減速設定
-        motion-gpios = <&gpio1 0 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
-        zephyr,axis-x = <INPUT_REL_X>;
-        zephyr,axis-y = <INPUT_REL_Y>;
+        spi-max-frequency = <2000000>; // 元の2MHzに戻しました
         
-        /* 🛠️ エラーの原因：CPI関連の設定行を完全に削除 */
-        /* cpi-value = <400>; */ 
+        /* 🛠️ MOTIONピンを P1.00 (裏面NFC1) に設定 */
+        irq-gpios = <&gpio1 0 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
         
+        /* 元のプロパティ構成に戻しました */
+        evt-type = <2>;  // INPUT_EV_REL
+        x-input-code = <0>;  // INPUT_REL_X
+        y-input-code = <1>;  // INPUT_REL_Y
+        cpi = <400>;
         invert-y;
+        force-awake;
         wakeup-source;
     };
 };
