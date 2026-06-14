@@ -1,7 +1,7 @@
 #include "zonkey.dtsi"
-#include <dt-bindings/zmk/input_transform.h>
-#include <dt-bindings/input/input-event-codes.h>
 #include <input/processors.dtsi>
+#include <dt-bindings/zmk/input_transform.h>
+#include <input/processors/runtime-input-processor.dtsi>
 
 &default_transform {
     col-offset = <6>;
@@ -17,9 +17,18 @@
         ;
 };
 
-&trackball_listener {
-    status = "okay";
-    device = <&trackball>;
+/ {
+    trackball_listener: trackball_listener {
+        compatible = "zmk,input-listener";
+        device = <&trackball>;
+        input-processors = <&mouse_runtime_input_processor>;
+
+        /* スクロールレイヤー: 指定レイヤーでカーソル移動をスクロールに変換 */
+        scroller {
+            layers = <5>;
+            input-processors = <&zip_xy_to_scroll_mapper &scroll_runtime_input_processor>;
+        };
+    };
 };
 
 &pinctrl {
@@ -41,6 +50,8 @@
     };
 };
 
+&xiao_serial { status = "disabled"; };
+
 &spi0 {
     status = "okay";
     compatible = "nordic,nrf-spim";
@@ -51,19 +62,16 @@
 
     trackball: trackball@0 {
         status = "okay";
-        compatible = "pixart,pmw3610";
+        compatible = "pixart,pmw3610-alt";
         reg = <0>;
         spi-max-frequency = <2000000>;
-        
-        /* 🛠️ MOTIONピンを P1.00 (裏面NFC1) に固定 */
-        motion-gpios = <&gpio1 0 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
-        
-        /* Zephyr 4.1 で必須（Required）の軸割り当て */
-        zephyr,axis-x = <INPUT_REL_X>;
-        zephyr,axis-y = <INPUT_REL_Y>;
-        
-        /* 🛠️ エラーの原因となる `cpi` や `cpi-value` は一切記述しない */
+        irq-gpios = <&gpio1 0 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
+        evt-type = <2>;  // INPUT_EV_REL
+        x-input-code = <0>;  // INPUT_REL_X
+        y-input-code = <1>;  // INPUT_REL_Y
+        cpi = <400>;
         invert-y;
+        force-awake;
         wakeup-source;
     };
 };
