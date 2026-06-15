@@ -15,3 +15,7 @@
 &left_encoder {
     status = "okay";
 };
+
+&non_lipo_battery {
+    io-channels = <&adc 4>;
+};
