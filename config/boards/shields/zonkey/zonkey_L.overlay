@@ -13,9 +13,21 @@
 };
 
 
-&left_encoder {
-    status = "okay";
+/ {
+    sensors {
+        compatible = "zmk,keymap-sensors";
+        sensors = <&left_encoder>;
+    };
+
+    left_encoder: encoder_left {
+        compatible = " Alps,ec11";
+        label = "LEFT_ENCODER";
+        a-gpios = <&xiao_d 0 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
+        b-gpios = <&xiao_d 5 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
+        steps = <24>;
+    };
 };
+
 
 &non_lipo_battery {
     io-channels = <&adc 2>;
