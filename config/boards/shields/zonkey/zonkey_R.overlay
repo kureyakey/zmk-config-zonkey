@@ -55,6 +55,10 @@
     io-channels = <&adc 0>;
 };
 
+&non_lipo_battery {
+    io-channels = <&adc 0>;
+};
+
 &spi0 {
     status = "okay";
     compatible = "nordic,nrf-spim";
