@@ -13,7 +13,7 @@
         kscan = <&kscan0>;
         transform = <&default_transform>;
 
-        keys  //                     w   h    x    y     rot    rx    ry
+        keys  //                       w   h    x    y     rot   rx   ry
             = <&key_physical_attrs 100 100   25    0       0     0     0>
             , <&key_physical_attrs 100 100  125    0       0     0     0>
             , <&key_physical_attrs 100 100  225    0       0     0     0>
@@ -79,12 +79,12 @@
         compatible = "zmk,kscan-gpio-matrix";
         label = "KSCAN";
         diode-direction = "col2row";
-            row-gpios
-                = <&xiao_d 1 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> 
-                , <&xiao_d 2 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> 
-                , <&xiao_d 3 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> 
-                , <&xiao_d 6 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> 			
-                ;
+        row-gpios
+            = <&xiao_d 1 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> 
+            , <&xiao_d 2 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> 
+            , <&xiao_d 3 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> 
+            , <&xiao_d 6 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>            
+            ;
     };
 
     left_encoder: encoder_left {
@@ -103,5 +103,29 @@
         compatible = "zmk,keymap-sensors";
         sensors = <&left_encoder &right_encoder>;
         triggers-per-rotation = <10>;
+    };
+
+    /* ⭕ 乾電池用ノードをルートノードの内側に正しく配置 */
+    non_lipo_battery: non_lipo_battery {
+        compatible = "zmk,non-lipo-battery";
+        io-channels = <&adc 0>;
+    };
+}; /* ← ここでルートノード (/) を完全に閉じます */
+
+
+/* --- 既存のハードウェア機能の初期状態（無効化 / 基本設定） --- */
+
+/* アナログ・デジタル・コンバータを有効化 */
+&adc {
+    status = "okay";
+};
+
+/* SPI0とトラックボール子ノードを定義（初期状態は disabled） */
+&spi0 {
+    status = "disabled";
+    
+    trackball: trackball@0 {
+        status = "disabled";
+        reg = <0>;
     };
 };
