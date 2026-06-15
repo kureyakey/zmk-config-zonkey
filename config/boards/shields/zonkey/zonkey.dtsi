@@ -141,3 +141,18 @@
         reg = <0>;
     };
 };
+
+/ {
+    chosen {
+        /* 何も参照しないことで、ラベル参照エラーを回避する */
+        zmk,battery = &dummy_battery;
+    };
+
+    dummy_battery: dummy_battery {
+        compatible = "zmk,battery-voltage-divider";
+        io-channels = <&adc 0>; /* ダミーのピン */
+        output-ohms = <0>;
+        full-ohms = <0>;
+        status = "disabled"; /* 無効化してエラーを止める */
+    };
+};
