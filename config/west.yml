@@ -8,8 +8,7 @@ manifest:
       url-base: https://github.com/gohanda11
     - name: kureyakey
       url-base: https://github.com/kureyakey
-    - name: caksoylar  # <-- new entry
-      url-base: https://github.com/caksoylar  
+
   projects:
     - name: zmk
       remote: zmkfirmware
@@ -18,14 +17,12 @@ manifest:
     - name: zmk-feature-non-lipo-battery-management
       remote: sekigon-gonnoc
       revision: main
-   - name: zmk-rgbled-widget
+    - name: zmk-rgbled-widget
       remote: gohanda11
       revision: fix/xiao-variant-overlays
     - name: zmk-pmw3610-driver
       remote: kureyakey
       revision: main
-    - name: zmk-rgbled-widget
-      remote: caksoylar
-      revision: v0.3
+
   self:
     path: config
