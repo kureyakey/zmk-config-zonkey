@@ -103,7 +103,7 @@
         status = "disabled";
     };
 
-    / {
+  / {
     sensors: sensors {
         compatible = "zmk,keymap-sensors";
         sensors = <&left_encoder &right_encoder>;
@@ -112,10 +112,10 @@
 
     non_lipo_battery: non_lipo_battery {
         compatible = "zmk,non-lipo-battery";
-        io-channels = <&adc 0>;
     };
 }; 
 
+/* 2. ルートノードの外側（デバイス定義の拡張） */
 &adc {
     status = "okay";
 };
