@@ -4,8 +4,8 @@ manifest:
       url-base: https://github.com/zmkfirmware
     - name: sekigon-gonnoc
       url-base: https://github.com/sekigon-gonnoc
-    - name: caksoylar 
-      url-base: https://github.com/caksoylar  
+    - name: gohanda11
+      url-base: https://github.com/gohanda11
     - name: badjeff
       url-base: https://github.com/badjeff
   projects:
@@ -20,7 +20,7 @@ manifest:
       remote: badjeff
       revision: main
     - name: zmk-rgbled-widget
-      remote: caksoylar
-      revision: main
+      remote: gohanda11
+      revision: fix/xiao-variant-overlays
   self:
     path: config
