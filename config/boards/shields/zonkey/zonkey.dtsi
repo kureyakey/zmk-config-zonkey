@@ -90,6 +90,18 @@
         status = "disabled";
     };
 
+   vbatt: vbatt {
+        // Disable default battery monitoring
+        status = "disabled";
+    };
+
+    non_lipo_battery: non_lipo_battery {
+        compatible = "zmk,non-lipo-battery";
+        io-channels = <&adc 0>;
+    };
+
+   };
+
 
     left_encoder: encoder_left {
         compatible = "alps,ec11";
