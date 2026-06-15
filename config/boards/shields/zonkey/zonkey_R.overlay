@@ -59,4 +59,9 @@
         scroll-layers = <5>;
 
     };
+
+&non_lipo_battery {
+    io-channels = <&adc 2>;
+};
+
 };
