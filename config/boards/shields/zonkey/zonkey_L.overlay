@@ -1,5 +1,9 @@
 #include "zonkey.dtsi"
 
+&default_transform {
+    col-offset = <6>;
+};
+
 &kscan0 {
     col-gpios
         = <&xiao_d 10 GPIO_ACTIVE_HIGH>
@@ -11,7 +15,7 @@
         ;
 };
 
-/* 左手側のエンコーダーを有効化 */
+
 &left_encoder {
     status = "okay";
 };
