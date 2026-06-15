@@ -18,10 +18,10 @@
 #
 ---
 include:
- - board: xiao_ble/nrf52840/zmk
-   shield: zonkey_R rgbled_adapter
-   snippet: studio-rpc-usb-uart
- - board: xiao_ble/nrf52840/zmk
-   shield: zonkey_L rgbled_adapter
- - board: xiao_ble/nrf52840/zmk
-   shield: settings_reset
+  - board: xiao_ble_nrf52840
+    shield: zonkey_R rgbled_adapter
+    snippet: studio-rpc-usb-uart
+  - board: xiao_ble_nrf52840
+    shield: zonkey_L rgbled_adapter
+  - board: xiao_ble_nrf52840
+    shield: settings_reset
