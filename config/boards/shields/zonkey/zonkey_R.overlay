@@ -54,10 +54,8 @@
 
 &xiao_serial { status = "disabled"; };
 
-/ {
    &non_lipo_battery {
     io-channels = <&adc 0>;
-};
 };
 
 &spi0 {
