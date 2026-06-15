@@ -1,3 +1,5 @@
+#include "zonkey.dtsi"
+
 / {
     left_encoder: encoder_left {
         compatible = "zmk,rotary-encoder";
