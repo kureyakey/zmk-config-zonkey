@@ -17,14 +17,13 @@
 };
 
 / {
-    /* chosenをここでオーバーライドして、このファイルを読み込んだときだけ適用されるようにする */
     chosen {
-        zmk,battery = &non_lipo_battery;
+        zmk,battery = &vbatt;
     };
 
-    non_lipo_battery: battery {
+    vbatt: vbatt {
         compatible = "zmk,battery-voltage-divider";
-        io-channels = <&adc 4>; /* 左手はD4 */
+        io-channels = <&adc 4>; /* 左手は4、右手は0 */
         output-ohms = <470000>;
         full-ohms = <1470000>;
     };
