@@ -15,14 +15,13 @@
 
 / {
     left_encoder: encoder_left {
-        compatible = "zmk,ec11";
-        status = "okay";
+    compatible = "zmk,rotary-encoder";
 
-        a-gpios = <&gpio0 5 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
-        b-gpios = <&gpio0 2 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
+    a-gpios = <&gpio0 5 GPIO_ACTIVE_HIGH>;
+    b-gpios = <&gpio0 2 GPIO_ACTIVE_HIGH>;
 
-        resolution = <4>;
-    };
+    resolution = <2>;
+};
 };
 
 / {
