@@ -1,7 +1,4 @@
 #include "zonkey.dtsi"
-#include <dt-bindings/zmk/pointing.h>
-#include <dt-bindings/zmk/input_transform.h>
-
 
 &default_transform {
     col-offset = <6>;
