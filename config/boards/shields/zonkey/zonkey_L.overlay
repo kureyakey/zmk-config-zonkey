@@ -18,5 +18,5 @@
 };
 
 &non_lipo_battery {
-    io-channels = <&adc 4>;
+    io-channels = <&adc 2>;
 };
