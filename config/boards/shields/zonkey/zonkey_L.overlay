@@ -1,4 +1,4 @@
-#include "soa44.dtsi"
+#include "zonkey.dtsi"
 
 &kscan0 {
         col-gpios
