@@ -16,7 +16,6 @@
     status = "okay";
 };
 
-/* 左手側は明示的に channel@2（D4ピン）を吸い上げる */
 &non_lipo_battery {
-    io-channels = <&adc 2>;
+    io-channels = <&adc 4>; /* 2 から 4 に修正 */
 };
