@@ -55,7 +55,7 @@
 &xiao_serial { status = "disabled"; };
 
 / {
-    vbatt: battery {
+    non_lipo_battery: battery {
         compatible = "zmk,battery-voltage-divider";
         io-channels = <&adc 0>; /* 右手はD0ピン */
         output-ohms = <470000>;
