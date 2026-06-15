@@ -4,7 +4,7 @@
 #include <input/processors.dtsi>
 
 &default_transform {
-    col-offset = <6>; // 左手キーが6つなら、右手は6からスタートさせる
+    col-offset = <6>;
 };
 
 &kscan0 {
