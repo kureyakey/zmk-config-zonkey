@@ -13,7 +13,7 @@
 };
 
 
-&{/} {
+/ {
     left_encoder: encoder_left {
         compatible = "zmk,ec11";
         status = "okay";
@@ -23,7 +23,9 @@
 
         resolution = <4>;
     };
+};
 
+/ {
     sensors {
         compatible = "zmk,keymap-sensors";
         sensors = <&left_encoder>;
