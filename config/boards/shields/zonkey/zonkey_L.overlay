@@ -17,13 +17,8 @@
 };
 
 / {
-    chosen {
-        zmk,battery = &vbatt;
-    };
-
-    vbatt: vbatt {
-        compatible = "zmk,battery-voltage-divider";
-        io-channels = <&adc 4>; /* 左手は4、右手は0 */
+    non_lipo_battery {
+        io-channels = <&adc 4>;
         output-ohms = <470000>;
         full-ohms = <1470000>;
     };
