@@ -3,6 +3,10 @@
 #include <dt-bindings/input/input-event-codes.h>
 #include <input/processors.dtsi>
 
+&default_transform {
+    col-offset = <6>; // 左手キーが6つなら、右手は6からスタートさせる
+};
+
 &kscan0 {
     col-gpios
         = <&xiao_d 10 GPIO_ACTIVE_HIGH>
