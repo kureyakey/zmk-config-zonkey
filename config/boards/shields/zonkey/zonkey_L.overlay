@@ -1,22 +1,6 @@
 #include "zonkey.dtsi"
 
 &kscan0 {
-        col-gpios
-            = <&xiao_d 10 GPIO_ACTIVE_HIGH>
-            , <&xiao_d 9 GPIO_ACTIVE_HIGH> 
-            , <&xiao_d 8 GPIO_ACTIVE_HIGH> 
-            , <&xiao_d 7 GPIO_ACTIVE_HIGH> 
-            , <&gpio0 10 GPIO_ACTIVE_HIGH>
-            , <&gpio0 9 GPIO_ACTIVE_HIGH>
-            ;
-};
-
-&left_encoder {
-    status = "okay";
-};
-#include "zonkey.dtsi"
-
-&kscan0 {
     col-gpios
         = <&xiao_d 10 GPIO_ACTIVE_HIGH>
         , <&xiao_d 9 GPIO_ACTIVE_HIGH> 
@@ -32,7 +16,7 @@
     status = "okay";
 };
 
-/* 左手側の乾電池測定ピンを D4 (AIN2) に上書き */
+/* 左手側は明示的に channel@2（D4ピン）を吸い上げる */
 &non_lipo_battery {
     io-channels = <&adc 2>;
 };
