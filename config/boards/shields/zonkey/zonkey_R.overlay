@@ -18,7 +18,6 @@
     trackball_listener {
         compatible = "zmk,input-listener";
         device = <&trackball>;
-
     };
 };
 
@@ -57,11 +56,10 @@
         irq-gpios = <&gpio0 2 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
         automouse-layer = <6>;
         scroll-layers = <5>;
-
     };
+}; /* ← ここでしっかりspi0を閉じました！ */
 
+/* SPIの外側（ルート直下と同じ扱い）でピンポイントに上書き指定 */
 &non_lipo_battery {
     io-channels = <&adc 0>;
-};
-
 };
