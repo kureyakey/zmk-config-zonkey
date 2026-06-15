@@ -105,22 +105,41 @@
         triggers-per-rotation = <10>;
     };
 
-    /* ⭕ 乾電池用ノードをルートノードの内側に正しく配置 */
+    /* ⭕ 乾電池監視機能のベース定義（デフォルトの初期値は0番を指しておく） */
     non_lipo_battery: non_lipo_battery {
         compatible = "zmk,non-lipo-battery";
         io-channels = <&adc 0>;
     };
-}; /* ← ここでルートノード (/) を完全に閉じます */
+}; /* ➔ ここでルートノード (/) を完全に閉じる */
 
 
-/* --- 既存のハードウェア機能の初期状態（無効化 / 基本設定） --- */
+/* --- 以下、ルートの外側で既存の周辺機能を拡張 --- */
 
-/* アナログ・デジタル・コンバータを有効化 */
 &adc {
     status = "okay";
+    #address-cells = <1>;
+    #size-cells = <0>;
+
+    /* 右手側が使う D0 (AIN0) チャンネルを準備 */
+    channel@0 {
+        reg = <0>;
+        zephyr,gain = "ADC_GAIN_1_6";
+        zephyr,reference = "ADC_REF_INTERNAL";
+        zephyr,acquisition-time = <ADC_ACQ_TIME_DEFAULT>;
+        zephyr,input-positive = <NRF_ADC_AIN0>;
+    };
+
+    /* 左手側が使う D4 (AIN2) チャンネルを準備 */
+    channel@2 {
+        reg = <2>;
+        zephyr,gain = "ADC_GAIN_1_6";
+        zephyr,reference = "ADC_REF_INTERNAL";
+        zephyr,acquisition-time = <ADC_ACQ_TIME_DEFAULT>;
+        zephyr,input-positive = <NRF_ADC_AIN2>;
+    };
 };
 
-/* SPI0とトラックボール子ノードを定義（初期状態は disabled） */
+/* SPI0とトラックボール子ノードを定義 */
 &spi0 {
     status = "disabled";
     
