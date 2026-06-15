@@ -203,9 +203,7 @@
 &kp LCTRL       &kp LEFT_WIN  &kp LEFT_ALT  &lt 3 INT_HENKAN  &lt 2 SPACE  &lt 1 INT_MUHENKAN               &kp BACKSPACE  &kp ENTER                                 &kp DEL
             >;
 
-            sensor-bindings =
-                <&scroll_up_down>,
-                <&inc_dec_kp C_VOL_DN C_VOL_UP>;
+            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
         };
 
         layer_1 {
@@ -222,7 +220,7 @@
 &mt LCTL ESC    &kp LEFT_WIN  &kp LEFT_ALT  &lt 3 INT_HENKAN  &lt 2 SPACE  &lt 1 INT_MUHENKAN                 &kp BACKSPACE  &kp ENTER                         &kp DEL
             >;
 
-            sensor-bindings = <&scroll_up_down>;
+            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
         };
 
         layer_2 {
@@ -239,7 +237,7 @@
 &kp LCTRL       &kp LEFT_WIN  &kp LEFT_ALT  &lt 3 INT_HENKAN  &lt 2 SPACE  &lt 1 INT_MUHENKAN            &kp BACKSPACE  &kp ENTER                                                   &kp DEL
             >;
 
-            sensor-bindings = <&scroll_up_down>;
+            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
         };
 
         layer_3 {
@@ -256,7 +254,7 @@
 &kp LCTRL       &kp LEFT_WIN  &kp LEFT_ALT  &lt 3 INT_HENKAN  &lt 2 SPACE  &lt 1 INT_MUHENKAN            &kp BACKSPACE  &kp ENTER                           &kp DEL
             >;
 
-            sensor-bindings = <&scroll_up_down>;
+            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
         };
 
         layer_4 {
@@ -273,7 +271,7 @@
 &kp LCTRL       &kp LEFT_WIN    &kp LEFT_ALT  &kp INT_HENKAN  &kp SPACE     &kp INT_MUHENKAN             &kp BACKSPACE    &kp ENTER                                                        &kp DEL
             >;
 
-            sensor-bindings = <&scroll_up_down>;
+            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
         };
 
         layer_5 {
@@ -290,7 +288,7 @@
 &kp LCTRL       &kp LEFT_WIN  &kp LEFT_ALT  &kp INT_HENKAN  &kp SPACE  &kp INT_MUHENKAN            &kp BACKSPACE  &kp ENTER                          &kp DEL
             >;
 
-            sensor-bindings = <&scroll_up_down>;
+            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
         };
 
         layer_6 {
@@ -301,7 +299,7 @@
 &trans  &trans  &trans  &trans  &trans  &trans            &trans  &trans                                &trans
             >;
 
-            sensor-bindings = <&scroll_up_down>;
+            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
         };
     };
 };
