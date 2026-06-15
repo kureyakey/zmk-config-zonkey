@@ -54,10 +54,13 @@
 
 &xiao_serial { status = "disabled"; };
 
-&vbatt {
-    io-channels = <&adc 0>; /* 右手はD0ピンから吸い上げる */
-    output-ohms = <470000>;  /* R3 = 470kΩ */
-    full-ohms = <1470000>;   /* R2(1MΩ) + R3(470kΩ) = 1470kΩ */
+/ {
+    vbatt: battery {
+        compatible = "zmk,battery-voltage-divider";
+        io-channels = <&adc 0>; /* 右手はD0ピン */
+        output-ohms = <470000>;
+        full-ohms = <1470000>;
+    };
 };
 
 &spi0 {
