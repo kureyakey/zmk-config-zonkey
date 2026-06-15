@@ -55,15 +55,8 @@
 &xiao_serial { status = "disabled"; };
 
 / {
-    chosen {
-        zmk,battery = &vbatt;
-    };
-
-    vbatt: vbatt {
-        compatible = "zmk,battery-voltage-divider";
-        io-channels = <&adc 0>; /* 左手は4、右手は0 */
-        output-ohms = <470000>;
-        full-ohms = <1470000>;
+    non_lipo_battery {
+        io-channels = <&adc 0>;
     };
 };
 
