@@ -20,11 +20,3 @@
 &non_lipo_battery {
     io-channels = <&adc 4>;
 };
-
-&spi0 {
-    status = "disabled";
-};
-
-&trackball {
-    status = "disabled";
-};
