@@ -119,9 +119,9 @@
 };
 
 &spi0 {
-    status = "disabled";
+    status = "okay";
     trackball: trackball@0 {
-        status = "disabled";
+        compatible = "pixart,pmw3610-alt";
         reg = <0>;
     };
 };
