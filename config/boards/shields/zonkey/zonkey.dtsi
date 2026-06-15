@@ -122,17 +122,3 @@
 &adc {
     status = "okay";
 };
-
-&spi0 {
-    status = "okay";
-    trackball: trackball@0 {
-        compatible = "pixart,pmw3610-alt";
-        reg = <0>;
-        spi-max-frequency = <2000000>;
-        irq-gpios = <&gpio1 0 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
-        x-input-code = <0>;
-        y-input-code = <1>;
-        cpi = <400>;
-        invert-y;
-    };
-};
