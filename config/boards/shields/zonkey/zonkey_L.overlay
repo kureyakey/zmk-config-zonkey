@@ -17,7 +17,7 @@
 };
 
 / {
-    vbatt: battery {
+    non_lipo_battery: battery {
         compatible = "zmk,battery-voltage-divider";
         io-channels = <&adc 4>; /* 左手はD4ピン */
         output-ohms = <470000>;
