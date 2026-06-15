@@ -14,3 +14,25 @@
 &left_encoder {
     status = "okay";
 };
+#include "zonkey.dtsi"
+
+&kscan0 {
+    col-gpios
+        = <&xiao_d 10 GPIO_ACTIVE_HIGH>
+        , <&xiao_d 9 GPIO_ACTIVE_HIGH> 
+        , <&xiao_d 8 GPIO_ACTIVE_HIGH> 
+        , <&xiao_d 7 GPIO_ACTIVE_HIGH> 
+        , <&gpio0 10 GPIO_ACTIVE_HIGH>
+        , <&gpio0 9 GPIO_ACTIVE_HIGH>
+        ;
+};
+
+/* 左手側のエンコーダーを有効化 */
+&left_encoder {
+    status = "okay";
+};
+
+/* 左手側の乾電池測定ピンを D4 (AIN2) に上書き */
+&non_lipo_battery {
+    io-channels = <&adc 2>;
+};
