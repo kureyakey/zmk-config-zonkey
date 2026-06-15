@@ -6,23 +6,21 @@ manifest:
       url-base: https://github.com/sekigon-gonnoc
     - name: gohanda11
       url-base: https://github.com/gohanda11
-    - name: kureyakey
-      url-base: https://github.com/kureyakey
-
+    - name: badjeff
+      url-base: https://github.com/badjeff
   projects:
     - name: zmk
       remote: zmkfirmware
-      revision: v0.3
+      revision: main
       import: app/west.yml
     - name: zmk-feature-non-lipo-battery-management
       remote: sekigon-gonnoc
       revision: main
+    - name: zmk-pmw3610-driver
+      remote: badjeff
+      revision: main
     - name: zmk-rgbled-widget
       remote: gohanda11
       revision: fix/xiao-variant-overlays
-    - name: zmk-pmw3610-driver
-      remote: kureyakey
-      revision: main
-
   self:
     path: config
