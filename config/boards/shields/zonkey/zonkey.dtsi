@@ -103,6 +103,7 @@
         status = "disabled";
     };
 
+    / {
     sensors: sensors {
         compatible = "zmk,keymap-sensors";
         sensors = <&left_encoder &right_encoder>;
@@ -111,7 +112,9 @@
 
     non_lipo_battery: non_lipo_battery {
         compatible = "zmk,non-lipo-battery";
+        io-channels = <&adc 0>;
     };
+}; 
 
 &adc {
     status = "okay";
@@ -122,6 +125,11 @@
     trackball: trackball@0 {
         compatible = "pixart,pmw3610-alt";
         reg = <0>;
-        // その他ピン設定などをここに書く
+        spi-max-frequency = <2000000>;
+        irq-gpios = <&gpio1 0 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
+        x-input-code = <0>;
+        y-input-code = <1>;
+        cpi = <400>;
+        invert-y;
     };
 };
