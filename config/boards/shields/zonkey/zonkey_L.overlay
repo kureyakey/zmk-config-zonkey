@@ -9,9 +9,20 @@
         , <&gpio0 10 GPIO_ACTIVE_HIGH>
         , <&gpio0 9 GPIO_ACTIVE_HIGH>
         ;
-}; // ← ここで確実にkscan0を閉じる
+};
 
-/ { // ← ルートノードを新しく開く
+/ {
+    /* 既存のデフォルトバッテリー監視を無効化 */
+    vbatt: vbatt {
+        status = "disabled";
+    };
+
+    /* 乾電池（単3/単4）用の設定: D4ピン(P0.04) = AIN2 なので &adc 2 */
+    non_lipo_battery: non_lipo_battery {
+        compatible = "zmk,non-lipo-battery";
+        io-channels = <&adc 2>;
+    };
+
     left_encoder: encoder_left {
         compatible = "alps,ec11";
         a-gpios = <&xiao_d 5 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
@@ -29,4 +40,4 @@
         sensors = <&left_encoder &right_encoder>;
         triggers-per-rotation = <10>;
     };
-}; // ← ルートノードを閉じる
+};
