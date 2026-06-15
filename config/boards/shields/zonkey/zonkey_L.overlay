@@ -21,10 +21,9 @@
 
     left_encoder: encoder_left {
     compatible = "zmk,ec11";
-    resolution = <4>;
     a-gpios = <&gpio0 5 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
     b-gpios = <&gpio0 2 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
-    steps = <4>;
+    resolution = <4>;
     status = "okay";
 };
 };
