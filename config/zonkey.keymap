@@ -4,7 +4,6 @@
 #include <dt-bindings/zmk/pointing.h>
 #include <behaviors/rgbled_widget.dtsi>
 
-#define ZMK_POINTING_DEFAULT_SCRL_VAL 100
 #define MOUSE 6
 #define JP_DQUOTE       AT                // "
 #define JP_AMPERSAND    CARET             // &
