@@ -111,8 +111,8 @@
 };
 
     non_lipo_battery: non_lipo_battery {
-    compatible = "zmk,non-lipo-battery";
-    /* io-channelsは記述しない */
+        compatible = "zmk,non-lipo-battery";
+    };
 };
 
 &adc {
