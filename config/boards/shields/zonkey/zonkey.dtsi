@@ -99,7 +99,7 @@
         compatible = "zmk,non-lipo-battery";
         io-channels = <&adc 0>;
     };
-
+};
 
 &adc {
     status = "okay";
