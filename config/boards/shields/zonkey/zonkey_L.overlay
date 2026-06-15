@@ -22,5 +22,9 @@
 };
 
 &spi0 {
-    status = "disabled"; // 左手はトラックボールがないので明示的に無効化
+    status = "disabled";
+};
+
+&trackball {
+    status = "disabled";
 };
