@@ -104,4 +104,13 @@
         sensors = <&left_encoder &right_encoder>;
         triggers-per-rotation = <10>;
     };
+
+
+&adc {
+    status = "okay";
+};
+
+&spi0 {
+    status = "disabled";
+  };
 };
