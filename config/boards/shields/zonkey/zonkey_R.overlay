@@ -3,9 +3,8 @@
 #include <dt-bindings/input/input-event-codes.h>
 #include <input/processors.dtsi>
 
-
 &kscan0 {
-        col-gpios
+    col-gpios
         = <&xiao_d 10 GPIO_ACTIVE_HIGH>
         , <&xiao_d 9 GPIO_ACTIVE_HIGH> 
         , <&xiao_d 8 GPIO_ACTIVE_HIGH> 
@@ -14,19 +13,15 @@
         ;
 };
 
-/ {
-    trackball_listener {
-        status = "okay";
-        compatible = "zmk,input-listener";
-        device = <&trackball>;
-        input-processors = <&zip_temp_layer 1 700>;
+/* トラックボールの設定 (ラベル参照で拡張) */
+&trackball_listener {
+    status = "okay";
+    device = <&trackball>;
+    input-processors = <&zip_temp_layer 1 700>;
 
-        scroller {
-            layers = <5>;
-            input-processors =
-                <&zip_xy_to_scroll_mapper>,
-                <&zip_scroll_scaler 2 5>;
-        };
+    scroller {
+        layers = <5>;
+        input-processors = <&zip_xy_to_scroll_mapper>, <&zip_scroll_scaler 2 5>;
     };
 };
 
@@ -38,7 +33,6 @@
                 <NRF_PSEL(SPIM_MISO, 0, 4)>;
         };
     };
-
     spi0_sleep: spi0_sleep {
         group1 {
             psels = <NRF_PSEL(SPIM_SCK, 0, 5)>,
@@ -50,14 +44,6 @@
 };
 
 &xiao_serial { status = "disabled"; };
-
-   &non_lipo_battery {
-    io-channels = <&adc 0>;
-};
-
-&non_lipo_battery {
-    io-channels = <&adc 0>;
-};
 
 &spi0 {
     status = "okay";
@@ -73,12 +59,16 @@
         reg = <0>;
         spi-max-frequency = <2000000>;
         irq-gpios = <&gpio1 0 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
-        evt-type = <2>;  // INPUT_EV_REL
-        x-input-code = <0>;  // INPUT_REL_X
-        y-input-code = <1>;  // INPUT_REL_Y
+        evt-type = <2>;
+        x-input-code = <0>;
+        y-input-code = <1>;
         cpi = <400>;
         invert-y;
         force-awake;
         wakeup-source;
     };
+};
+
+&non_lipo_battery {
+    io-channels = <&adc 0>;
 };
