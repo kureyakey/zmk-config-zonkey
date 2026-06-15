@@ -108,11 +108,11 @@
         sensors = <&left_encoder &right_encoder>;
         triggers-per-rotation = <10>;
     };
-};
+
     non_lipo_battery: non_lipo_battery {
         compatible = "zmk,non-lipo-battery";
     };
-};
+}; // ここでルートノードを閉じる
 
 &adc {
     status = "okay";
@@ -123,5 +123,6 @@
     trackball: trackball@0 {
         compatible = "pixart,pmw3610-alt";
         reg = <0>;
+        // その他ピン設定などをここに書く
     };
 };
