@@ -16,8 +16,11 @@
     status = "okay";
 };
 
-&vbatt {
-    io-channels = <&adc 4>; /* 左手はD4ピンから吸い上げる */
-    output-ohms = <470000>;  /* R3 = 470kΩ */
-    full-ohms = <1470000>;   /* R2(1MΩ) + R3(470kΩ) = 1470kΩ */
+/ {
+    vbatt: battery {
+        compatible = "zmk,battery-voltage-divider";
+        io-channels = <&adc 4>; /* 左手はD4ピン */
+        output-ohms = <470000>;
+        full-ohms = <1470000>;
+    };
 };
