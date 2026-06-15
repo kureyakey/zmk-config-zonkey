@@ -1,23 +1,8 @@
-/ {
-    left_encoder: encoder_left {
-        compatible = "zmk,rotary-encoder";
-
-        a-gpios = <&gpio0 5 GPIO_ACTIVE_HIGH>;
-        b-gpios = <&gpio0 2 GPIO_ACTIVE_HIGH>;
-
-        resolution = <2>;
-    };
-
-    sensors {
-        compatible = "zmk,keymap-sensors";
-        sensors = <&left_encoder>;
-    };
-};
+#include "zonkey.dtsi"
 
 / {
     kscan0: kscan {
         compatible = "zmk,kscan-gpio-matrix";
-
         col-gpios = <
             &xiao_d 10 GPIO_ACTIVE_HIGH
             &xiao_d 9 GPIO_ACTIVE_HIGH
@@ -27,7 +12,20 @@
             &gpio0 9 GPIO_ACTIVE_HIGH
         >;
     };
+
+    left_encoder: encoder_left {
+        compatible = "zmk,rotary-encoder";
+        a-gpios = <&gpio0 5 GPIO_ACTIVE_HIGH>;
+        b-gpios = <&gpio0 2 GPIO_ACTIVE_HIGH>;
+        resolution = <2>;
+    };
+
+    sensors {
+        compatible = "zmk,keymap-sensors";
+        sensors = <&left_encoder>;
+    };
 };
+
 &non_lipo_battery {
     io-channels = <&adc 2>;
 };
