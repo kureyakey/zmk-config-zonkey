@@ -114,7 +114,6 @@
         compatible = "zmk,non-lipo-battery";
 
     };
-};
 
 &adc {
     status = "okay";
