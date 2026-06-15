@@ -6,12 +6,11 @@
         zmk,physical-layout = &physical_layout0;
     };
 
-    physical_layout0: physical_layout_0 {
+    zonkey_physical_layout: zonkey_physical_layout {
         compatible = "zmk,physical-layout";
-        display-name = "default_layout";
-
-        kscan = <&kscan0>;
+        display-name = "Default";
         transform = <&default_transform>;
+        kscan = <&kscan0>;
 
         keys  //                     w   h    x    y     rot    rx    ry
             = <&key_physical_attrs 100 100   25    0       0     0     0>
