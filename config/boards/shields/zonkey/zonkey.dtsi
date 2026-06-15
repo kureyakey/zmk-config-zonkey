@@ -4,7 +4,6 @@
 / {
     chosen {
         zmk,physical-layout = &zonkey_physical_layout;
-        zmk,battery = &non_lipo_battery;
     };
 
     zonkey_physical_layout: zonkey_physical_layout {
