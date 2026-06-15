@@ -3,15 +3,15 @@
 
 / {
     chosen {
-        zmk,physical-layout = &zonkey_physical_layout;
-        zmk,battery = &non_lipo_battery;
+        zmk,physical-layout = &physical_layout0;
     };
 
-    zonkey_physical_layout: zonkey_physical_layout {
+    physical_layout0: physical_layout_0 {
         compatible = "zmk,physical-layout";
-        display-name = "Default";
-        transform = <&default_transform>;
+        display-name = "default_layout";
+
         kscan = <&kscan0>;
+        transform = <&default_transform>;
 
         keys  //                     w   h    x    y     rot    rx    ry
             = <&key_physical_attrs 100 100   25    0       0     0     0>
@@ -87,31 +87,21 @@
                 ;
     };
 
-    trackball_listener: trackball_listener {
-        compatible = "zmk,input-listener";
+    left_encoder: encoder_left {
+        compatible = "alps,ec11";
+        a-gpios = <&xiao_d 5 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
+        b-gpios = <&xiao_d 0 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
+        steps = <24>;
         status = "disabled";
     };
-    
-    vbatt: vbatt {
-        // Disable default battery monitoring
+
+    right_encoder: encoder_right {
         status = "disabled";
     };
-    non_lipo_battery: non_lipo_battery {
-        compatible = "zmk,non-lipo-battery";
-        io-channels = <&adc 0>;
-    };
 
-};
-
-&adc {
-    status = "okay";
-};
-
-&spi0 {
-    status = "disabled";
-
-    trackball: trackball@0 {
-        status = "disabled";
-        reg = <0>;
+    sensors: sensors {
+        compatible = "zmk,keymap-sensors";
+        sensors = <&left_encoder &right_encoder>;
+        triggers-per-rotation = <10>;
     };
 };
