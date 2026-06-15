@@ -16,10 +16,8 @@
     status = "okay";
 };
 
-/ {
-    &non_lipo_battery {
-        io-channels = <&adc 4>;
-        output-ohms = <470000>;
-        full-ohms = <1470000>;
+ &non_lipo_battery {
+    io-channels = <&adc 4>;
+    output-ohms = <470000>;
+    full-ohms = <1470000>;
     };
-};
