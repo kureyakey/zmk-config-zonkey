@@ -3,7 +3,8 @@
 
 / {
     chosen {
-        zmk,physical-layout = &physical_layout0;
+        zmk,physical-layout = &zonkey_physical_layout;
+        zmk,battery = &non_lipo_battery;
     };
 
     zonkey_physical_layout: zonkey_physical_layout {
@@ -13,52 +14,50 @@
         kscan = <&kscan0>;
 
         keys  //                     w   h    x    y     rot    rx    ry
-            = <&key_physical_attrs 100 100   25    0       0     0     0>
-            , <&key_physical_attrs 100 100  125    0       0     0     0>
-            , <&key_physical_attrs 100 100  225    0       0     0     0>
-            , <&key_physical_attrs 100 100  325    0       0     0     0>
-            , <&key_physical_attrs 100 100  425    0       0     0     0>
-            , <&key_physical_attrs 100 100  825    0       0     0     0>
-            , <&key_physical_attrs 100 100  925    0       0     0     0>
-            , <&key_physical_attrs 100 100 1025    0       0     0     0>
-            , <&key_physical_attrs 100 100 1125    0       0     0     0>
-            , <&key_physical_attrs 100 100 1225    0       0     0     0>
-
-            , <&key_physical_attrs 100 100   50  100       0     0     0>
-            , <&key_physical_attrs 100 100  150  100       0     0     0>
-            , <&key_physical_attrs 100 100  250  100       0     0     0>
-            , <&key_physical_attrs 100 100  350  100       0     0     0>
-            , <&key_physical_attrs 100 100  450  100       0     0     0>
-            , <&key_physical_attrs 100 100  550  100       0     0     0>
-            , <&key_physical_attrs 100 100  800  200       0     0     0>
-            , <&key_physical_attrs 100 100  850  100       0     0     0>
-            , <&key_physical_attrs 100 100  950  100       0     0     0>
-            , <&key_physical_attrs 100 100 1050  100       0     0     0>
-            , <&key_physical_attrs 100 100 1150  100       0     0     0>
-            , <&key_physical_attrs 100 100 1250  100       0     0     0>
-
-            , <&key_physical_attrs 100 100    0  200       0     0     0>
-            , <&key_physical_attrs 100 100  100  200       0     0     0>
-            , <&key_physical_attrs 100 100  200  200       0     0     0>
-            , <&key_physical_attrs 100 100  300  200       0     0     0>
-            , <&key_physical_attrs 100 100  400  200       0     0     0>
-            , <&key_physical_attrs 100 100  500  200       0     0     0>
-            , <&key_physical_attrs 100 100  750  100       0     0     0>
-            , <&key_physical_attrs 100 100  900  200       0     0     0>
-            , <&key_physical_attrs 100 100 1000  200       0     0     0>
-            , <&key_physical_attrs 100 100 1100  200       0     0     0>
-            , <&key_physical_attrs 100 100 1200  200       0     0     0>
-            , <&key_physical_attrs 100 100 1300  200       0     0     0>
-
-            , <&key_physical_attrs 100 100    0  300       0     0     0>
-            , <&key_physical_attrs 100 100  100  300       0     0     0>
-            , <&key_physical_attrs 100 100  200  300       0     0     0>
-            , <&key_physical_attrs 100 100  325  330       0     0     0>
-            , <&key_physical_attrs 100 100  425  330       0     0     0>
-            , <&key_physical_attrs 100 100  525  330       0     0     0>
-            , <&key_physical_attrs 100 100  775  330       0     0     0>
-            , <&key_physical_attrs 100 100  875  330       0     0     0>
-            , <&key_physical_attrs 100 100 1300  300       0     0     0>
+            = <&key_physical_attrs 100 100    0    0       0     0     0>
+            , <&key_physical_attrs 100 100  100    0       0     0     0>
+            , <&key_physical_attrs 100 100  200    0       0     0     0>
+            , <&key_physical_attrs 100 100  300    0       0     0     0>
+            , <&key_physical_attrs 100 100  400    0       0     0     0>
+            , <&key_physical_attrs 100 100  500    0       0     0     0>
+            , <&key_physical_attrs 100 100  850    0       0     0     0>
+            , <&key_physical_attrs 100 100  950    0       0     0     0>
+            , <&key_physical_attrs 100 100 1050    0       0     0     0>
+            , <&key_physical_attrs 100 100 1150    0       0     0     0>
+            , <&key_physical_attrs 100 100 1250    0       0     0     0>
+            , <&key_physical_attrs 150 100 1350    0       0     0     0>
+            , <&key_physical_attrs 125 100    0  100       0     0     0>
+            , <&key_physical_attrs 100 100  125  100       0     0     0>
+            , <&key_physical_attrs 100 100  225  100       0     0     0>
+            , <&key_physical_attrs 100 100  325  100       0     0     0>
+            , <&key_physical_attrs 100 100  425  100       0     0     0>
+            , <&key_physical_attrs 100 100  525  100       0     0     0>
+            , <&key_physical_attrs 100 100  875  100       0     0     0>
+            , <&key_physical_attrs 100 100  975  100       0     0     0>
+            , <&key_physical_attrs 100 100 1075  100       0     0     0>
+            , <&key_physical_attrs 100 100 1175  100       0     0     0>
+            , <&key_physical_attrs 100 100 1275  100       0     0     0>
+            , <&key_physical_attrs 125 100 1375  100       0     0     0>
+            , <&key_physical_attrs 175 100    0  200       0     0     0>
+            , <&key_physical_attrs 100 100  175  200       0     0     0>
+            , <&key_physical_attrs 100 100  275  200       0     0     0>
+            , <&key_physical_attrs 100 100  375  200       0     0     0>
+            , <&key_physical_attrs 100 100  475  200       0     0     0>
+            , <&key_physical_attrs 100 100  575  200       0     0     0>
+            , <&key_physical_attrs 100 100  825  200       0     0     0>
+            , <&key_physical_attrs 100 100  925  200       0     0     0>
+            , <&key_physical_attrs 100 100 1025  200       0     0     0>
+            , <&key_physical_attrs 100 100 1125  200       0     0     0>
+            , <&key_physical_attrs 100 100 1225  200       0     0     0>
+            , <&key_physical_attrs 175 100 1325  200       0     0     0>
+            , <&key_physical_attrs 125 100  125  300       0     0     0>
+            , <&key_physical_attrs 125 100  250  300       0     0     0>
+            , <&key_physical_attrs 100 100  425  300       0     0     0>
+            , <&key_physical_attrs 100 100  525  300       0     0     0>
+            , <&key_physical_attrs 100 100  625  300       0     0     0>
+            , <&key_physical_attrs 100 100  750  300       0     0     0>
+            , <&key_physical_attrs 100 100  850  300       0     0     0>
+            , <&key_physical_attrs 125 100 1250  300       0     0     0>
             ;
     };
 
@@ -67,22 +66,23 @@
         columns = <12>;
         rows = <4>;
         map = <
-            RC(0,0) RC(0,1) RC(0,2) RC(0,3) RC(0,4)                 RC(0,6) RC(0,7) RC(0,8) RC(0,9) RC(0,10)
-            RC(1,0) RC(1,1) RC(1,2) RC(1,3) RC(1,4) RC(1,5) RC(3,6) RC(1,6) RC(1,7) RC(1,8) RC(1,9) RC(1,10)
-            RC(2,0) RC(2,1) RC(2,2) RC(2,3) RC(2,4) RC(2,5) RC(3,7) RC(2,6) RC(2,7) RC(2,8) RC(2,9) RC(2,10)
-            RC(3,0) RC(3,1) RC(3,2) RC(3,3) RC(3,4) RC(3,5) RC(3,8) RC(3,9) RC(3,10)
+            RC(0,0) RC(0,1) RC(0,2) RC(0,3) RC(0,4) RC(0,5)     RC(0,6) RC(0,7) RC(0,8) RC(0,9) RC(0,10) RC(0,11)
+            RC(1,0) RC(1,1) RC(1,2) RC(1,3) RC(1,4) RC(1,5)     RC(1,6) RC(1,7) RC(1,8) RC(1,9) RC(1,10) RC(1,11)
+            RC(2,0) RC(2,1) RC(2,2) RC(2,3) RC(2,4) RC(2,5)     RC(2,6) RC(2,7) RC(2,8) RC(2,9) RC(2,10) RC(2,11)
+                    RC(3,1) RC(3,2) RC(3,3) RC(3,4) RC(3,5)     RC(3,6) RC(3,7)                 RC(3,10)
         >;
     };
-    
+
     kscan0: kscan {
         compatible = "zmk,kscan-gpio-matrix";
         label = "KSCAN";
         diode-direction = "col2row";
+        wakeup-source;
             row-gpios
-                = <&xiao_d 1 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> 
-                , <&xiao_d 2 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> 
-                , <&xiao_d 3 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> 
-                , <&xiao_d 6 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> 			
+                = <&xiao_d 1 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+                , <&xiao_d 2 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+                , <&xiao_d 3 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+                , <&xiao_d 6 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
                 ;
     };
 
