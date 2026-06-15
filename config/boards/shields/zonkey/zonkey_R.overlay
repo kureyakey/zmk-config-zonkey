@@ -5,13 +5,13 @@
 };
 
 &kscan0 {
-        col-gpios
-            = <&xiao_d 10 GPIO_ACTIVE_HIGH>
-            , <&xiao_d 9 GPIO_ACTIVE_HIGH> 
-            , <&xiao_d 8 GPIO_ACTIVE_HIGH> 
-            , <&xiao_d 7 GPIO_ACTIVE_HIGH> 
-            , <&gpio0 10 GPIO_ACTIVE_HIGH>
-            ;
+    col-gpios
+        = <&xiao_d 10 GPIO_ACTIVE_HIGH>
+        , <&xiao_d 9 GPIO_ACTIVE_HIGH> 
+        , <&xiao_d 8 GPIO_ACTIVE_HIGH> 
+        , <&xiao_d 7 GPIO_ACTIVE_HIGH> 
+        , <&gpio0 10 GPIO_ACTIVE_HIGH>
+        ;
 };
 
 / {
@@ -40,6 +40,7 @@
     };
 };
 
+/* 右手側のSPI0とトラックボールを有効化 */
 &spi0 {
     status = "okay";
     compatible = "nordic,nrf-spim";
@@ -57,9 +58,9 @@
         automouse-layer = <6>;
         scroll-layers = <5>;
     };
-}; /* ← ここでしっかりspi0を閉じました！ */
+};
 
-/* SPIの外側（ルート直下と同じ扱い）でピンポイントに上書き指定 */
+/* 右手側は明示的に channel@0（D0ピン）を吸い上げる（spi0の外側に記述） */
 &non_lipo_battery {
     io-channels = <&adc 0>;
 };
