@@ -1,14 +1,5 @@
 #include "zonkey.dtsi"
 
-/ {
-    left_encoder: encoder_left {
-        compatible = "zmk,rotary-encoder";
-        a-gpios = <&gpio0 5 GPIO_ACTIVE_HIGH>;
-        b-gpios = <&gpio0 2 GPIO_ACTIVE_HIGH>;
-        resolution = <2>;
-    };
-};
-
 &kscan0 {
     compatible = "zmk,kscan-gpio-matrix";
 
@@ -24,4 +15,8 @@
 
 &non_lipo_battery {
     io-channels = <&adc 2>;
+};
+
+&left_encoder {
+    status = "okay";
 };
