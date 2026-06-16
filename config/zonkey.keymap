@@ -181,8 +181,7 @@
     compatible = "zmk,behavior-sensor-rotate";
     #sensor-binding-cells = <0>;
 
-    bindings = <&mouse_wheel_down &mouse_wheel_up>;
-
+    bindings = <&mmv MOVE_DOWN &mmv MOVE_UP>;
     tap-ms = <20>;
 };
     };
