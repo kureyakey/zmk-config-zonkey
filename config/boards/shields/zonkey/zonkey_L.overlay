@@ -1,5 +1,19 @@
 #include "zonkey.dtsi"
 
+/ {
+    left_encoder: encoder_left {
+        compatible = "zmk,rotary-encoder";
+        a-gpios = <&gpio0 5 GPIO_ACTIVE_HIGH>;
+        b-gpios = <&gpio0 2 GPIO_ACTIVE_HIGH>;
+        resolution = <2>;
+    };
+
+    sensors {
+        compatible = "zmk,keymap-sensors";
+        sensors = <&left_encoder>;
+    };
+};
+
 &kscan0 {
     compatible = "zmk,kscan-gpio-matrix";
 
@@ -11,19 +25,6 @@
         &gpio0 10 GPIO_ACTIVE_HIGH
         &gpio0 9 GPIO_ACTIVE_HIGH
     >;
-};
-
-left_encoder: encoder_left {
-    compatible = "zmk,rotary-encoder";
-
-    a-gpios = <&gpio0 5 GPIO_ACTIVE_HIGH>;
-    b-gpios = <&gpio0 2 GPIO_ACTIVE_HIGH>;
-    resolution = <2>;
-};
-
-sensors {
-    compatible = "zmk,keymap-sensors";
-    sensors = <&left_encoder>;
 };
 
 &non_lipo_battery {
