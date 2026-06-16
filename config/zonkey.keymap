@@ -177,13 +177,14 @@
             tapping-term-ms = <200>;
         };
 
-        scroll_up_down: behavior_sensor_rotate_mouse_wheel_up_down {
-            compatible = "zmk,behavior-sensor-rotate";
-            #sensor-binding-cells = <0>;
-            bindings = <&msc SCRL_DOWN>, <&msc SCRL_UP>;
+        scroll_up_down: scroll_up_down {
+    compatible = "zmk,behavior-sensor-rotate";
+    #sensor-binding-cells = <0>;
 
-            tap-ms = <20>;
-        };
+    bindings = <&msc SCRL_DOWN &msc SCRL_UP>;
+
+    tap-ms = <20>;
+};
     };
 
     keymap {
@@ -203,7 +204,7 @@
 &kp LCTRL       &kp LEFT_WIN  &kp LEFT_ALT  &lt 3 INT_HENKAN  &lt 2 SPACE  &lt 1 INT_MUHENKAN               &kp BACKSPACE  &kp ENTER                                 &kp DEL
             >;
 
-            sensor-bindings = <&msc SCRL_UP &msc SCRL_DOWN>;
+            sensor-bindings = <&scroll_up_down>;
         };
 
         layer_1 {
