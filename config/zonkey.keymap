@@ -182,6 +182,7 @@
     #sensor-binding-cells = <0>;
 
     bindings = <&cp M_WHL_DOWN>, <&cp M_WHL_UP>;
+    tap-ms = <20>;
 };
     };
 
