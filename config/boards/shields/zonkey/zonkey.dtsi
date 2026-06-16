@@ -87,7 +87,6 @@
 
 
           trackball_listener: trackball_listener {
-　　　　　　　　input-processors = <&zip_temp_layer 6 2000>;
              compatible = "zmk,input-listener";
              status = "disabled";
               };
