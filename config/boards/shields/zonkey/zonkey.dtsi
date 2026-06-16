@@ -105,12 +105,13 @@
 
         a-gpios = <&xiao_d 5 GPIO_ACTIVE_HIGH>;
         b-gpios = <&xiao_d 0 GPIO_ACTIVE_HIGH>;
-        steps = <80>;
+        steps = <12>;
     };
 
     sensors {
         compatible = "zmk,keymap-sensors";
         sensors = <&left_encoder>;
+        triggers-per-rotation = <10>;
     };
 };
 
