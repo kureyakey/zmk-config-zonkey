@@ -85,10 +85,11 @@
             , <&xiao_d 6 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>;
     };
 
-　　　trackball_listener: trackball_listener {
-        compatible = "zmk,input-listener";
-        status = "disabled";
-    };
+
+          trackball_listener: trackball_listener {
+             compatible = "zmk,input-listener";
+             status = "disabled";
+              };
 
     non_lipo_battery: non_lipo_battery {
         compatible = "zmk,non-lipo-battery";
