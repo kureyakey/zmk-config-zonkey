@@ -105,8 +105,6 @@
     };
 };
 
-/ {
-    &adc {
-        status = "okay";
-    };
+&adc {
+    status = "okay";
 };
