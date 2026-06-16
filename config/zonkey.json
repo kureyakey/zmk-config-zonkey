@@ -60,5 +60,11 @@
       "compatible": "alps,ec11",
       "enabled": false
     },
+    {
+      "ref": "right_encoder",
+      "name": "encoder_right",
+      "identifier": "encoder_right",
+      "enabled": false
+    }
   ]
 }
