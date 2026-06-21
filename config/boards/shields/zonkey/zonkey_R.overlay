@@ -21,7 +21,7 @@
 &trackball_listener {
     status = "okay";
     device = <&trackball>;
-    input-processors = <&zip_temp_layer 1 700>;
+    input-processors = <&zip_temp_layer 6 700>;
 
     scroller {
         layers = <5>;
