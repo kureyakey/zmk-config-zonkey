@@ -36,6 +36,12 @@
 };
 
 / {
+    zip_temp_layer: zip_temp_layer {
+        compatible = "zmk,behavior-drag-scroll";
+        #binding-cells = <0>;
+        min-drag-distance = <12>;
+    };
+
     combos { compatible = "zmk,combos"; };
 
     mo2: mo2 {
