@@ -30,6 +30,11 @@
 #define JP_HANZEN       GRAVE             // 半角/全角
 #define JP_BSLH  INT1         // (backslash)
 
+&zip_temp_layer {
+
+    min-drag-distance = <12>; 
+};
+
 &mt {
     flavor = "balanced";
     quick-tap-ms = <0>;
