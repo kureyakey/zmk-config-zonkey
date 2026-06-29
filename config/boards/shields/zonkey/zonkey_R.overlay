@@ -18,7 +18,6 @@
     trackball_listener {
         compatible = "zmk,input-listener";
         device = <&trackball>;
-        movement-threshold = <10>;
     };
 };
 
