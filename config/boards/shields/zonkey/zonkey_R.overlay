@@ -19,7 +19,7 @@
     trackball_listener {
         compatible = "zmk,input-listener";
         device = <&trackball>;
-        input-processors = <&zip_temp_layer 6 2000>, <&zip_mouse_movement_threshold 10>;
+        /*input-processors = <&zip_temp_layer 6 2000>, <&zip_mouse_movement_threshold 10>;
     };
 };
 
