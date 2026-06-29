@@ -3,6 +3,13 @@
 #include <dt-bindings/zmk/input_transform.h>
 #include <input/processors/runtime-input-processor.dtsi>
 
+/ {
+    trackball_listener: trackball_listener {
+        compatible = "zmk,input-listener";
+    };
+};
+
+
 &default_transform {
     col-offset = <6>;
 };
