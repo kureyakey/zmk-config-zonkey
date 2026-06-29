@@ -11,9 +11,6 @@ manifest:
       remote: zmkfirmware
       revision: v0.3
       import: app/west.yml
-    - name: zmk-input-processor
-      url: https://github.com/urob/zmk-input-processor
-      revision: v0.3
     - name: zmk-pmw3610-driver
       remote: kureyakey
       revision: main
