@@ -70,7 +70,7 @@
     cs-gpios = <&gpio0 9 GPIO_ACTIVE_LOW>;
 
     /* 💡 ノード名を元の trackball@0 に修正 */
-    trackball: trackball@0 {
+    trackball_device: trackball@0 {
         status = "okay";
         compatible = "pixart,pmw3610";
         reg = <0>;
