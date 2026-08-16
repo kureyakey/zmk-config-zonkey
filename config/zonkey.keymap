@@ -58,22 +58,21 @@
     };
 
     behaviors {
-
         rsr_vol: rsr_vol {
-        compatible = "zmk,behavior-runtime-sensor-rotate";
-        #sensor-binding-cells = <0>;
-        tap-ms = <20>;
-        cw-binding = <&kp C_VOL_DN>;
-        ccw-binding = <&kp C_VOL_UP>;
-    };
+            compatible = "zmk,behavior-runtime-sensor-rotate";
+            #sensor-binding-cells = <0>;
+            tap-ms = <20>;
+            cw-binding = <&kp C_VOL_DN>;
+            ccw-binding = <&kp C_VOL_UP>;
+        };
 
-    rsr_pg: rsr_pg {
-        compatible = "zmk,behavior-runtime-sensor-rotate";
-        #sensor-binding-cells = <0>;
-        tap-ms = <20>;
-        cw-binding = <&kp PG_UP>;
-        ccw-binding = <&kp PAGE_DOWN>;
-    };
+        rsr_pg: rsr_pg {
+            compatible = "zmk,behavior-runtime-sensor-rotate";
+            #sensor-binding-cells = <0>;
+            tap-ms = <20>;
+            cw-binding = <&kp PG_UP>;
+            ccw-binding = <&kp PAGE_DOWN>;
+        };
 
         lt_repeat: lt_repeat {
             compatible = "zmk,behavior-hold-tap";
@@ -106,10 +105,10 @@
             // | CTRL | WIN | ALT |HENKAN|SPACE|MUHENKAN|       | BS | ENT |      　　　　       | DEL |           
 
             bindings = <
-&kp Q           &kp W             &kp E         &kp R                    &kp T                                                  &kp Y          &kp U      &kp I      &kp O    &kp P
-&kp A           &kp S             &kp D         &kp F                    &kp G               &kp LS(LG(NUMBER_4))    &kp B      &kp H          &kp J      &kp K      &kp L    &kp SQT
-&kp LEFT_SHIFT  &kp Z             &kp X         &lt_repeat 6 C           &lt_repeat 5 V      &lt_repeat 4 B          &kp MINUS  &kp N          &kp M      &kp COMMA  &kp DOT  &kp SLASH
-&kp LCTRL       &kp LEFT_COMMAND  &kp LEFT_ALT  &lt_repeat 3 INT_HENKAN  &lt_repeat 2 SPACE  &lt_repeat 1 INT5                  &kp BACKSPACE  &kp ENTER                                 &kp DEL
+&kp Q           &kp W             &kp E         &kp R                    &kp T                                                        &kp Y          &kp U      &kp I      &kp O    &kp P
+&kp A           &kp S             &kp D         &kp F                    &kp G               &kp LS(LG(NUMBER_4))          &kp B      &kp H          &kp J      &kp K      &kp L    &kp SQT
+&kp LEFT_SHIFT  &kp Z             &kp X         &lt_repeat 6 C           &lt_repeat 5 V      &lt_repeat 4 B                &kp MINUS  &kp N          &kp M      &kp COMMA  &kp DOT  &kp SLASH
+&kp LCTRL       &kp LEFT_COMMAND  &kp LEFT_ALT  &lt_repeat 3 INT_HENKAN  &lt_repeat 2 SPACE  &lt_repeat 1 LANG_KATAKANA               &kp BACKSPACE  &kp ENTER                                 &kp DEL
             >;
 
             sensor-bindings = <&rsr_pg>;
@@ -185,21 +184,23 @@
 
         layer_5 {
             bindings = <
-&studio_unlock  &trans  &trans  &trans  &trans              &trans  &trans  &trans  &trans  &trans
-&trans          &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans
-&kp LEFT_SHIFT  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans
-&kp LCTRL       &kp LEFT_WIN  &kp LEFT_ALT  &kp INT_HENKAN  &kp SPACE  &kp INT_MUHENKAN  &kp BACKSPACE  &kp ENTER  &kp DEL
+&studio_unlock  &trans        &trans        &trans          &trans                                 &trans         &trans     &trans  &trans  &trans
+&trans          &trans        &trans        &trans          &trans     &trans              &trans  &trans         &trans     &trans  &trans  &trans
+&kp LEFT_SHIFT  &trans        &trans        &trans          &trans     &trans              &trans  &trans         &trans     &trans  &trans  &trans
+&kp LCTRL       &kp LEFT_WIN  &kp LEFT_ALT  &kp INT_HENKAN  &kp SPACE  &kp INT_MUHENKAN            &kp BACKSPACE  &kp ENTER                          &kp DEL
             >;
+
             sensor-bindings = <&rsr_vol>;
         };
 
         layer_6 {
             bindings = <
-&trans          &trans        &trans        &trans        &trans          &trans  &trans  &trans  &trans  &trans
-&trans          &trans        &trans        &trans        &trans  &trans  &trans  &trans  &mkp MB1  &mkp MB3  &mkp MB2  &trans
-&trans          &trans        &trans        &trans        &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans          &trans        &trans        &trans        &trans  &trans  &kp BACKSPACE  &kp ENTER  &kp DEL
+&trans  &trans  &trans  &trans  &trans                    &trans         &trans     &trans    &trans    &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans         &mkp MB1   &mkp MB3  &mkp MB2  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans         &trans     &trans    &trans    &trans
+&trans  &trans  &trans  &trans  &trans  &trans            &kp BACKSPACE  &kp ENTER                              &kp DEL
             >;
+
             sensor-bindings = <&rsr_vol>;
         };
     };
