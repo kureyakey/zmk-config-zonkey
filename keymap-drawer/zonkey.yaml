@@ -40,7 +40,7 @@ layers:
   - LEFT ALT
   - {t: INT HENKAN, h: '3'}
   - {t: SPACE, h: '2'}
-  - {t: INT5, h: '1'}
+  - {t: LANG KATAKANA, h: '1'}
   - BACKSPACE
   - ENTER
   - DEL
